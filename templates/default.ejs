@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    * {
+      margin: 0;
+    }
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+    }
+    input, button, textarea, select {
+      font: inherit;
+    }
+    p, h1, h2, h3, h4, h5, h6 {
+      overflow-wrap: break-word;
+    }
+  </style>
+  <style>
+    .article {
+        font-family: 'Georgia', serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        color: #333;
+    }
+    .article h1,
+    .article h2,
+    .article h3,
+    .article h4,
+    .article h5,
+    .article h6 {
+        font-family: 'Arial', sans-serif;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+    .article h1 {
+        font-size: 2em;
+    }
+    .article h2 {
+        font-size: 1.75em;
+    }
+    .article h3 {
+        font-size: 1.5em;
+    }
+    .article p {
+        margin-bottom: 1em;
+    }
+    .article a {
+        color: #1a0dab;
+        text-decoration: none;
+    }
+    .article a:hover {
+        text-decoration: underline;
+    }
+    .article img {
+        max-width: 100%;
+        height: auto;
+    }
+    .article ul,
+    .article ol {
+        margin-left: 20px;
+        padding-left: 0;
+    }
+    .article blockquote {
+        font-style: italic;
+        margin: 1em 0;
+        padding: 0.5em 1em;
+        border-left: 0.25em solid #ccc;
+        background-color: #f8f8f8;
+    }
+    .article code {
+        font-family: 'Courier New', monospace;
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+    .article hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+    }
+  </style>
+  <style>
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    footer {
+      border-top: 1px solid #ccc;
+      margin: 2em 0;
+      padding: 1em 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="article">
+      <%- content %>
+    </div>
+    <footer>
+      Copyright © 2024-present
+    </footer>
+  </main>
+
+</body>
+
+</html>
