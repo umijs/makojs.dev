@@ -6,7 +6,7 @@ title: Mako - Extremely fast, Production-grade web bundler
 
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" width="120" height="120" />
 
-> Work in Progress!<br />
+> 🚧 Work in Progress!<br />
 > Mako is still under active development and is not yet ready for production use.<br />
 > **See you in June 2024!**
 
