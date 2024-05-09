@@ -41,7 +41,11 @@ export async function build() {
     fs.ensureDirSync(path.dirname(htmlPath));
     let templatePath = path.join(cwd, 'templates/default.ejs');
     let template = fs.readFileSync(templatePath, 'utf-8');
-    let htmlContent2 = ejs.render(template, { content: htmlContent, title: attributes.title || '' });
+    let htmlContent2 = ejs.render(template, {
+      content: htmlContent,
+      title: attributes.title || '',
+      isHome: html === 'index.html',
+    });
     fs.writeFileSync(htmlPath, htmlContent2);
     console.log(`Built dist/${html}`);
   }

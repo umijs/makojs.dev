@@ -4,104 +4,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" />
+  <link rel="icon"
+    href="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" />
   <title>
     <%= title %>
   </title>
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
+
     * {
       margin: 0;
     }
+
     body {
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-    img, picture, video, canvas, svg {
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
       display: block;
       max-width: 100%;
     }
-    input, button, textarea, select {
+
+    input,
+    button,
+    textarea,
+    select {
       font: inherit;
     }
-    p, h1, h2, h3, h4, h5, h6 {
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       overflow-wrap: break-word;
     }
   </style>
   <style>
-    .article {
-        font-family: 'Georgia', serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        line-height: 1.6;
-        color: #333;
+    article {
+      font-family: 'Georgia', serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #333;
     }
-    .article h1,
-    .article h2,
-    .article h3,
-    .article h4,
-    .article h5,
-    .article h6 {
-        font-family: 'Arial', sans-serif;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
+
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6 {
+      font-family: 'Arial', sans-serif;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
     }
-    .article h1 {
-        font-size: 2em;
+
+    article h1 {
+      font-size: 2em;
     }
-    .article h2 {
-        font-size: 1.75em;
+
+    article h2 {
+      font-size: 1.75em;
     }
-    .article h3 {
-        font-size: 1.5em;
+
+    article h3 {
+      font-size: 1.5em;
     }
-    .article p {
-        margin-bottom: 1em;
+
+    article p {
+      margin-bottom: 1em;
     }
-    .article a {
-        color: #1a0dab;
-        text-decoration: none;
+
+    article a {
+      color: #1a0dab;
+      text-decoration: none;
     }
-    .article a:hover {
-        text-decoration: underline;
+
+    article a:hover {
+      text-decoration: underline;
     }
-    .article img {
-        max-width: 100%;
-        height: auto;
+
+    article img {
+      max-width: 100%;
+      height: auto;
     }
-    .article ul,
-    .article ol {
-        margin-left: 20px;
-        padding-left: 0;
+
+    article ul,
+    article ol {
+      margin-left: 20px;
+      padding-left: 0;
     }
-    .article blockquote {
-        font-style: italic;
-        margin: 1em 0;
-        padding: 0.5em 1em;
-        border-left: 0.25em solid #ccc;
-        background-color: #f8f8f8;
+
+    article blockquote {
+      font-style: italic;
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      border-left: 0.25em solid #ccc;
+      background-color: #f8f8f8;
     }
-    .article code {
-        font-family: 'Courier New', monospace;
-        background-color: #f4f4f4;
-        padding: 2px 4px;
-        border-radius: 3px;
+
+    article code {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
     }
-    .article hr {
+
+    article hr {
       border: none;
       border-top: 1px solid #ccc;
       margin: 1em 0;
     }
   </style>
   <style>
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+    body {
+      font: 16px/140% sans-serif;
+      overflow-y: scroll;
     }
+
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <style>
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    aside {
+      width: 200px;
+    }
+
+    aside a {
+      color: #000;
+    }
+
+    nav {
+      position: sticky;
+      top: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul>li {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    header h1 a {
+      font-size: 1.5rem;
+      display: flex;
+      line-height: 30px;
+    }
+
+    header h1 a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    article {
+      flex: 1;
+    }
+
     footer {
       border-top: 1px solid #ccc;
       margin: 2em 0;
@@ -114,12 +208,29 @@
 <body>
 
   <main>
-    <div class="article">
+    <aside>
+      <nav>
+        <header>
+          <h1>
+            <a href="/">
+              <img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" />
+              <span>Mako</span>
+            </a>
+          </h1>
+        </header>
+        <ul>
+          <li><a href="/getting-started.html">Getting Started</a></li>
+          <li><a href="/config.html">Config</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <article>
       <%- content %>
-    </div>
-    <footer>
-      Copyright © 2024-present
-    </footer>
+        <footer>
+          Copyright © 2024-present
+        </footer>
+    </article>
   </main>
 
 </body>

@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "esno scripts/build.ts",
+    "dev": "nodemon --exec \"npm run build\" --watch . -e \"ejs md ts\" -i dist -i node_modules",
     "deploy": "esno scripts/deploy.ts"
   },
   "devDependencies": {
@@ -12,6 +13,7 @@
     "front-matter": "^4.0.2",
     "markdown-it": "^14.0.0",
     "markdown-it-shikiji": "^0.10.2",
+    "nodemon": "^3.1.0",
     "typescript": "^5.4.5",
     "zx": "^7.2.3"
   }

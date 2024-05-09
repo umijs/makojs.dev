@@ -1,2 +1,7 @@
+---
+title: Mako - Getting Started
+---
 
-# WIP
+# Getting Started
+
+WIP
