@@ -22,7 +22,7 @@ Mako is an **extremely fast**, **production-grade** web bundler based on **Rust*
 
 ## Main Features
 
-- **Extremely fast**, Mako is built in Rust, which is known for its performance and safety. Mako takes advantage of Rust's concurrency and caching features to provide fast and efficient bundling.
+- **Extremely fast**, Mako is built in Rust, which is known for its performance and safety. Mako takes advantage of [data-parallelism](https://crates.io/crates/rayon) and [caching](https://crates.io/crates/cached) features to provide fast and efficient bundling.
 - **Production-grade**, Mako is already in production use in hundreds of projects at Ant Group. And we have tested it in thousands of projects and it has proven to be reliable and stable.
 - **Easy to use**, Mako is designed to be easy to use out of the box. Start with zero configuration and customize it as needed. Mako is also compatible with existing frameworks like umi.
 
