@@ -30,10 +30,10 @@ export class Markdown {
       linkify: true,
       typographer: true
     });
-    // md.use(await Shikiji({
-    //   // themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
-    //   theme: 'github-light',
-    // }));
+    md.use(await Shikiji({
+      // themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
+      theme: 'github-light',
+    }));
     md.use(anchor, {
       permalink: anchor.permalink.linkInsideHeader({
         symbol: `

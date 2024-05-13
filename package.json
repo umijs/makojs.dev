@@ -13,7 +13,7 @@
     "front-matter": "^4.0.2",
     "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
-    "markdown-it-shikiji": "^0.10.2",
+    "markdown-it-shikiji": "^0.9.12",
     "nodemon": "^3.1.0",
     "typescript": "^5.4.5",
     "zx": "^7.2.3"
