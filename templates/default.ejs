@@ -72,6 +72,25 @@
       margin-bottom: 0.5em;
     }
 
+    article h1 a,
+    article h2 a,
+    article h3 a,
+    article h4 a,
+    article h5 a,
+    article h6 a {
+      color: #666;
+      display: none;
+    }
+
+    /* article h1:hover a, */
+    article h2:hover a,
+    article h3:hover a,
+    article h4:hover a,
+    article h5:hover a,
+    article h6:hover a {
+      display: inline-block;
+    }
+
     article h1 {
       font-size: 2em;
     }
@@ -106,6 +125,7 @@
     article ol {
       margin-left: 20px;
       padding-left: 0;
+      margin-bottom: 1em;
     }
 
     article blockquote {
@@ -117,10 +137,27 @@
     }
 
     article code {
-      font-family: 'Courier New', monospace;
+      font-family: Menlo, monospace;
       background-color: #f4f4f4;
       padding: 2px 4px;
       border-radius: 3px;
+      font-size: 0.8em;
+    }
+
+    article pre {
+      font-family: Menlo, monospace;
+      background: #f4f4f4;
+      padding: 12px 20px;
+      font-size: 0.8em;
+      border-radius: 3px;
+      margin-bottom: 1em;
+      overflow: auto;
+    }
+
+    article pre>code {
+      padding: 0;
+      border-radius: 0;
+      font-size: 1em;
     }
 
     article hr {
@@ -174,6 +211,16 @@
       margin-bottom: 10px;
     }
 
+    nav ul ul {
+      padding-left: 10px;
+    }
+
+    nav ul ul>li {
+      font-weight: normal;
+      font-size: 0.9em;
+      margin-bottom: 0;
+    }
+
     header {
       margin-bottom: 40px;
     }
@@ -219,9 +266,17 @@
           </h1>
         </header>
         <ul>
-          <li><a href="/getting-started.html">Getting Started</a></li>
-          <li><a href="/config.html">Config</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
+          <li>
+            <a href="/getting-started">Getting Started</a>
+            <ul>
+              <li><a href="/getting-started#install-mako">Install mako</a></li>
+              <li><a href="/getting-started#your-first-bundle">Your first bundle</a></li>
+              <li><a href="/getting-started#bundle-with-react">Bundle with react</a></li>
+              <li><a href="/getting-started#bundle-with-umi">Bundle with umi</a></li>
+            </ul>
+          </li>
+          <li><a href="/config">Config</a></li>
+          <li><a href="/faq">FAQ</a></li>
         </ul>
       </nav>
     </aside>

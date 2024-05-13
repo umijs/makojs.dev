@@ -1,4 +1,5 @@
-// import Shikiji from 'markdown-it-shikiji';
+import Shikiji from 'markdown-it-shikiji';
+import anchor from 'markdown-it-anchor';
 import frontMatter from 'front-matter';
 
 interface MarkdownOpts {
@@ -33,6 +34,14 @@ export class Markdown {
     //   // themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
     //   theme: 'github-light',
     // }));
+    md.use(anchor, {
+      permalink: anchor.permalink.linkInsideHeader({
+        symbol: `
+          <span aria-hidden="true">#</span>
+        `,
+        placement: 'after'
+      })
+    });
     let html = md.render(body);
     return html;
   }

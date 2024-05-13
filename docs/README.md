@@ -14,13 +14,13 @@ title: Mako - Extremely fast, Production-grade web bundler
 
 Mako `['mɑːkoʊ]` is an **extremely fast**, **production-grade** web bundler based on **Rust**.
 
-Check out the [Getting Started](./getting-started.html)(WIP) to give mako a try.
+Check out the [Getting Started](./getting-started) to give mako a try.
 
 ## Benchmark
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1715149117/blog/jwr37qnh.png)
 
-Benchmark repo will be open sourced together with mako soon.
+Benchmark repo will be open sourced together with mako.
 
 ## Main Features
 
