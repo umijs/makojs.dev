@@ -55,12 +55,13 @@
     article {
       /* hack solution */
       min-height: 600px;
-      font-family: 'Georgia', serif;
+      /* font-family: 'Georgia', serif; */
       max-width: 800px;
       margin: 0 auto;
       padding: 0 20px;
       line-height: 1.6;
       color: #333;
+      font-size: 1em;
     }
 
     article h1,
@@ -172,7 +173,7 @@
   </style>
   <style>
     body {
-      font: 16px/140% sans-serif;
+      font: 16px/140% 'PT Serif', Georgia, serif;
       overflow-y: scroll;
     }
 
@@ -279,7 +280,13 @@
               <li><a href="/getting-started#bundle-with-umi">Bundle with umi</a></li>
             </ul>
           </li>
-          <li><a href="/config">Config</a></li>
+          <li
+            <a href="/config">Config</a>
+            <ul>
+              <li><a href="/config#how-to-config">How to config</a></li>
+              <li><a href="/config#configuration-items">Configuration items</a></li>
+            </ul>
+          </li>
           <li>
             <a href="/faq">FAQ</a>
             <ul>
