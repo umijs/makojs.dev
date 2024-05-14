@@ -8,4 +8,4 @@ Here you can find all the blog posts that we have written. We will write about n
 
 ## 2024
 
-- `2024-05-14` [Mako 内测了](/blog/mako-internal-test)
+- `2024-05-15` [Mako 内测了](/blog/mako-internal-test)

@@ -1,6 +1,6 @@
 ---
 title: Mako - Mako 内测了
-publishedAt: 2024-05-14 00:00:00
+publishedAt: 2024-05-15 00:00:00
 authors:
   - name: sorrycc
     link: https://github.com/sorrycc
@@ -8,7 +8,7 @@ authors:
 
 # Mako 内测了
 
-_2024-05-14_
+_2024-05-15_
 
 **WIP**
 
