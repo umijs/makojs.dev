@@ -1,6 +1,7 @@
 import ejs from 'ejs';
 import 'zx/globals';
 import { Markdown } from './Markdown';
+import { Collection } from './Collection';
 
 async function main() {
   await build();
@@ -49,6 +50,9 @@ export async function build() {
     fs.writeFileSync(htmlPath, htmlContent2);
     console.log(`Built dist/${html}`);
   }
+
+  // generate rss feed
+  await new Collection({ dirPath: path.join(docsDir, 'blog') }).generateRssFeed();
 
   console.log('Building done!');
 }
