@@ -24,7 +24,6 @@ export async function build() {
       return { html, markdown: doc };
     });
   })();
-  console.log(docs);
 
   // compile markdown to html
   for (let { html, markdown } of docs) {

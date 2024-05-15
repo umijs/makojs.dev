@@ -18,7 +18,7 @@ Check out the [Getting Started](./getting-started) to give mako a try.
 
 ## Benchmark
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715149117/blog/jwr37qnh.png)
+![](https://res.cloudinary.com/sorrycc/image/upload/v1715742144/blog/oug9jbat.png)
 
 Benchmark repo will be open sourced together with mako.
 

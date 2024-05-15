@@ -47,47 +47,33 @@ Hello Mako!
 
 ## Bundle with react
 
-Create a new directory and add a simple `index.tsx` file and `index.html` file.
+Create a new mako project with the following command.
 
 ```bash
-$ mkdir my-app && cd my-app
-$ mkdir src
-$ cat <<EOF > src/index.tsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-function App() {
-  return <div>Hello Mako!</div>;
-}
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
-EOF
-$ mkdir public
-$ cat <<EOF > public/index.html
-<div id="root"></div>
-<script src="/index.js"></script>
-EOF
+$ npm create mako
 ```
 
-Install the dependencies.
+Then cd into the project directory and run.
 
 ```bash
-$ npm i @umijs/mako serve -D
-$ npm i react react-dom -S
+$ cd mako-project
+$ npm run dev
+Building with mako for development...
+✓ Built in 101ms
 ```
 
-Then run Mako to build the bundle.
+Open the browser and visit http://localhost:3000 to see the output.
+
+![](https://res.cloudinary.com/sorrycc/image/upload/v1715740987/blog/hlufbyzp.png)
+
+Finally, if you want to build the project for production, run the following command.
 
 ```bash
-$ npx mako build --mode production
+$ npm run build
 Building with mako for production...
-dist/index.js       144.68 kB │ map: 354.14 kB
+dist/index.js       144.68 kB │ map: 354.22 kB
 ✓ Built in 96ms
 Complete!
-```
-
-Finally, run the bundle to see the output.
-
-```bash
-$ npx serve ./dist
 ```
 
 ## Bundle with umi

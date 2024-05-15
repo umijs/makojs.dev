@@ -10,15 +10,13 @@ authors:
 
 _2024-05-15_
 
-**WIP**
-
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" width="120" height="120" />
 
 朋友们，大家好！Mako 终于内测了。
 
-Mako 是极快和生产级的前端构建工具，基于 Rust。Mako 去年上半年立项，下半年在蚂蚁集团内部正式发布，通过工程化的方式验证了数千个项目和 npm 包，已落地数百个项目，服务了中后台、小程序、低代码、营销等多个不同平台和业务场景。经过大量项目的实践和长时间的迭代，Mako 已经成熟，在速度和产物尺寸方面都已和社区的 Rust 构建方案齐平或实现超越，现在我们决定**在开源之前先做一轮内测来收集更多的反馈**。
+Mako 是极快和生产级的前端构建工具，基于 Rust。Mako 去年上半年立项，下半年 2023.11.24 在蚂蚁集团内部正式发布，通过工程化的方式验证了数千个项目和 npm 包，已落地数百个项目，服务了中后台、小程序、低代码、营销等多个不同平台和业务场景。经过大量项目的实践和长时间的迭代，Mako 已经成熟，在速度和产物尺寸方面都已和社区的 Rust 构建方案齐平或实现超越，现在我们决定**在开源之前先做一轮内测来收集更多的反馈**。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715149117/blog/jwr37qnh.png)
+![](https://res.cloudinary.com/sorrycc/image/upload/v1715742144/blog/oug9jbat.png)
 
 <p style="text-align:center;">Benchmark 基于 <a href="https://github.com/farm-fe/performance-compare">performance-compare</a> 里的项目，相关仓库会随 Mako 一起开源。</p>
 
@@ -35,7 +33,11 @@ $ npx umi config set mako {}
 $ npx umi build
 ```
 
-如果不是 Umi 用户，也可以在 [Getting Started](/getting-started) 页快速上手尝试不同类型的项目，目前没有针对这块做打磨，可能体验不佳，欢迎反馈。
+如果不是 Umi 用户，也可以一键创建 Mako + React 的项目。
+
+```bash
+$ npm create mako
+```
 
 如果你有任何问题或建议，可以在扫码加我们的微信群。
 
@@ -44,6 +46,10 @@ $ npx umi build
 或者点击以下链接加入 Telegram 群。
 
 https://t.me/+EN3fycCw3TI1NDA1
+
+同时，也欢迎大家通过 RSS 的方式订阅 Mako 的动态，我们会在这里发布 Mako 的最新消息以及和构建相关的高质量技术文章。
+
+https://makojs.dev/rss.xml
 
 ## 致谢
 
