@@ -407,6 +407,40 @@
     </article>
   </main>
 
+  <script>
+    function getFirstVisibleHeaderAnchor() {
+      const headerAnchors = document.querySelectorAll('article h2 a.header-anchor');
+      for (let i = 0; i < headerAnchors.length; i++) {
+        if (headerAnchors[i].parentNode.getBoundingClientRect().top > 0) {
+          return headerAnchors[i];
+        }
+      }
+      return null;
+    }
+    let navs = document.querySelectorAll('nav ul ul li a');
+    let currentId = null;
+    function highlightNav() {
+      const headerAnchor = getFirstVisibleHeaderAnchor();
+      if (!headerAnchor) {
+        return;
+      }
+      let id = location.pathname + headerAnchor.getAttribute('href');
+      if (currentId === id) {
+        return;
+      }
+      navs.forEach(nav => {
+        if (nav.getAttribute('href') === id) {
+          nav.style.fontWeight = 'bold';
+        } else {
+          nav.style.fontWeight = 'normal';
+        }
+      });
+      currentId = id;
+    }
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
+  </script>
+
 </body>
 
 </html>
