@@ -47,6 +47,10 @@ Hello Mako!
 
 ## Bundle with react
 
+> Or, you can checkout the codesandbox example.
+> 
+> [![Edit mako](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/devbox/mako-jzhkjh?embed=1&file=%2Fsrc%2FApp.tsx)
+
 Create a new mako project with the following command.
 
 ```bash
