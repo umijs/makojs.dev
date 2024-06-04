@@ -14,7 +14,7 @@ _2024-06-03_
 
 朋友们，大家好！有些同学对 Mako 的 Benchmark 感兴趣，今天就先把 Benchmark 仓库公开了。
 
-近期 Maro 正式内测，内测前我们整理了 Benchmark 仓库，基于 https://github.com/farm-fe/performance-compare 重新写了下，加了一些维度，比如 js 尺寸用于比较产物的 Tree Shaking 效果。仓库地址是 https://github.com/umijs/benchmark 。
+近期 Mako 正式内测，内测前我们整理了 Benchmark 仓库，基于 https://github.com/farm-fe/performance-compare 重新写了下，加了一些维度，比如 js 尺寸用于比较产物的 Tree Shaking 效果。仓库地址是 https://github.com/umijs/benchmark 。
 
 **1、先看 Benchmark 结果。**
 
