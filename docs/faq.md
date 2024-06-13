@@ -32,7 +32,7 @@ You can ask questions on the [Github issue tracker](https://github.com/umijs/umi
 
 Or, join the wechat group by scanning the QR code below:
 
-<img src="https://res.cloudinary.com/sorrycc/image/upload/v1717380719/blog/sstfm233.jpg" width="120" />
+<img src="https://res.cloudinary.com/sorrycc/image/upload/v1718286461/blog/rl7ysd3v.jpg" width="120" />
 
 Or, join the Telegram group by clicking the link below:
 

@@ -41,7 +41,7 @@ $ npm create mako
 
 如果你有任何问题或建议，可以在扫码加我们的微信群。
 
-<img src="https://res.cloudinary.com/sorrycc/image/upload/v1717380719/blog/sstfm233.jpg" width="120" />
+<img src="https://res.cloudinary.com/sorrycc/image/upload/v1718286461/blog/rl7ysd3v.jpg" width="120" />
 
 或者点击以下链接加入 Telegram 群。
 
