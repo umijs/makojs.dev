@@ -8,7 +8,7 @@ authors:
 
 # 聊下 Mako 的 Benchmark
 
-_2024-06-03_
+_2024-06-03 by [sorrycc](https://github.com/sorrycc)_
 
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" width="120" height="120" />
 
