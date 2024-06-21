@@ -6,7 +6,7 @@ title: Mako - Features
 
 ## Zero Config
 
-Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React, Images, Fonts, WASM and more are supported out of the box. No need to configure loaders, plugins, or anything else.
+Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React, Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders, plugins, or anything else.
 
 But, everything is configurable. If you have a file type that Mako doesn't support, you can add a plugin with loader for it.
 
@@ -187,42 +187,83 @@ or named to Scope hoisting?
 
 WIP: @stormslowly
 
-## Browser Compatibility
+## Targets
 
-WIP
+Mako has a [`targets`](/config#targets) config that you can use to specify the browsers that you want to target. Mako will automatically compile your code to be compatible with the specified browsers, including injecting ~~polyfills~~(not yet), helpers and more.
 
-## Node Compatibility
+```js
+{
+  targets: {
+    chrome: 40,
+    ie: 11,
+  },
+}
+```
 
-WIP
+When you want to build for node, you should also set [`platform`](/config#platform) to `node` and [`dynamicImportToRequire`](/config#dynamicimporttorequire) to true in the config. (Why need to set `dynamicImportToRequire` to true? Because the runtime does not yet support node-style chunk loading.)
 
-## Webpack Compatibility
+```js
+{
+  platform: 'node',
+  dynamicImportToRequire: true,
+}
+```
 
-WIP
+Notice: When `platform` is set to `'node'`, Mako will ignore all Node.js built-in modules (like `fs`, `path`, `http`, etc.) to keep the origin require expression.
+
+## Node Polyfill
+
+When `platform` is not set or is set to `'browser'`, Mako will automatically inject a Node.js polyfill to your code. This polyfill includes all Node.js built-in modules (like `fs`, `path`, `http`, etc.) and global objects (like `process`, `Buffer`, etc.). And `process.env.NODE_ENV` will be set to `'development'` in development mode and `'production'` in production mode.
+
+Native Node.js modules polyfill is based on [node-libs-browser-okam](https://github.com/sorrycc/node-libs-browser-okam) which is forked from [node-libs-browser](https://github.com/webpack/node-libs-browser). If you are curious about which polyfill is for which module, you can checkout [the source code](https://github.com/sorrycc/node-libs-browser-okam/blob/master/index.js).
 
 ## Performance
 
-WIP
+Mako is designed to be fast. We use Rust for the core bundling logic, and we use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile files in parallel. We have spend lots of time optimizing the performance of Mako.
 
-## Debugging
+![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
 
-WIP
+Check out [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [benchmark repo](https://github.com/umijs/benchmark) for more details.
 
 ## Code Analysis
 
-WIP
+Mako has a basic built-in code analysis system that will show you the size of your code and the size of each module. Enable it by setting [`analyze`](/config#analyze) in the config.
+
+```js
+{
+  analyze: {},
+}
+```
+
+The output will be like this:
+
+![](https://res.cloudinary.com/sorrycc/image/upload/v1718973387/blog/yoo60fny.png)
 
 ## RSC
 
-WIP
+Mako has a built-in RSC (React Server Components) support, but it's still experimental and not optimized for general usage. It has been used in pages in the Alipay App like 618 Activity, Voucher, Ant Forest, etc.
 
-## Content Hashing
+Mako has two config for RSC:
 
-WIP
+- [`rscServer`](/config#rscserver): Config for RSC server side.
+- [`rscClient`](/config#rscclient): Config for RSC client side.
+
+You can find a simple example in the [examples/rsc](https://github.com/umijs/mako/tree/master/examples/rsc).
+
+> Notice: RSC is complex and RSC support in Mako is experimental, and it's not suggested to use it in your project unless you know what you are doing.
 
 ## Umi Integration
 
-WIP
+[Umi](https://github.com/umijs/umi) is a popular React framework. Mako is designed to be compatible with Umi, and you can use Mako as the bundler in Umi 4 by just setting the `mako` field in the config.
+
+```diff
+{
++   mako: {},
+}
+```
+
+Checkout [Bundle with Umi](/getting-started#bundle-with-umi) for more details.
 
 ## Libraries
 
-Use [father](https://github.com/umijs/father), which is for libraries based on Mako.
+Suggest use [father](https://github.com/umijs/father), which is used to bundle libraries based on Mako.
