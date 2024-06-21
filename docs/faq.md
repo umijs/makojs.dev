@@ -8,11 +8,11 @@ Below are some frequently asked questions about Mako. You can also ask questions
 
 ## Should I use Mako?
 
-Please note that Mako is still experimental and not yet open-sourced. While it's used in hundreds of projects at Ant Financial, if you want to use it in your project on production, you should be aware of the risks.
+Please note that Mako is still experimental and not yet open-sourced. While it's used in hundreds of projects at Ant Financial, but if you want to use it in your project on production, you should be aware of the risks.
 
 ## Does mako support Windows?
 
-Not yet. Mako is currently only supported on MacOS and Linux. Windows support is planned after open-source release.
+Not yet. Mako is currently only supported on MacOS and Linux. Windows support is planned after the open-source release.
 
 ## Open source
 
@@ -37,3 +37,7 @@ Or, join the wechat group by scanning the QR code below:
 Or, join the Telegram group by clicking the link below:
 
 https://t.me/+EN3fycCw3TI1NDA1
+
+## html-webpack-plugin compatibility
+
+WIP

@@ -38,7 +38,7 @@ Notice: this configuration item is still WIP, the result may not be accurate.
 
 Whether to automatically enable CSS Modules.
 
-english: If not enabled, only files with `.module.css` or `.module.less` will be treated as CSS Modules; if enabled, named imports like `import styles from './a.css'` will also be treated as CSS Modules.
+If not enabled, only files with `.module.css` or `.module.less` will be treated as CSS Modules; if enabled, named imports like `import styles from './a.css'` will also be treated as CSS Modules.
 
 ### clean
 
@@ -56,36 +56,65 @@ Whether to output cjs format code.
 
 ### codeSplitting
 
-- Type: `false | "auto" | object`
+- Type: `false |  { strategy: "auto" } | { strategy: "granular", options: object } | { strategy: "advanced", options: object }`
 - Default: `false`
 
-Specify the code splitting strategy. Use `auto` for SPA, and `object` for MPA.
+Specify the code splitting strategy. Use `auto` or `granular` strategy for SPA, and `advance` strategy for MPA.
 
 ```ts
+// auto strategy
 {
   codeSplitting: {
-    //（optional）The minimum size of the split chunk, async chunks smaller than this size will be merged into the entry chunk
-    minSize: 20000,
-    // Split chunk grouping configuration
-    groups: [
-      {
-        // The name of the chunk group, currently only string values are supported
-        name: "common",
-        //（optional）The chunk type that the chunk group contains modules belong to, enum values are "async" (default) | "entry" | "all"
-        allowChunks: "entry",
-        //（optional）The minimum number of references to modules contained in the chunk group
-        minChunks: 1,
-        //（optional）The minimum size of the chunk group to take effect
-        minSize: 20000,
-        //（optional）The maximum size of the chunk group, exceeding this size will be automatically split again
-        maxSize: 5000000,
-        //（optional）The matching priority of the chunk group, the larger the value, the higher the priority
-        priority: 0,
-        //（optional）The matching regular expression of the chunk group
-        test: "(?:)",
-      }
-    ],
-  },
+    strategy: "auto";
+  }
+}
+```
+
+```ts
+// granular strategy
+{
+  codeSplitting:  {
+    strategy: "granular",
+    options: {
+      // Node modules those will be split to framework chunk
+      frameworkPackages: [ "react", "antd" ],
+      // (optional) The minimum size of the node module to be split
+      lib_min_size: 160000
+    }
+  }
+}
+
+```
+
+```ts
+// advance strategy
+{
+  codeSplitting: {
+    strategy: "advanced",
+    options: {
+      //（optional）The minimum size of the split chunk, async chunks smaller than this size will be merged into the entry chunk
+      minSize: 20000,
+      // Split chunk grouping configuration
+      groups: [
+        {
+          // The name of the chunk group, currently only string values are supported
+          name: "common",
+          //（optional）The chunk type that the chunk group contains modules belong to, enum values are "async" (default) | "entry" | "all"
+          allowChunks: "entry",
+          //（optional）The minimum number of references to modules contained in the chunk group
+          minChunks: 1,
+          //（optional）The minimum size of the chunk group to take effect
+          minSize: 20000,
+          //（optional）The maximum size of the chunk group, exceeding this size will be automatically split again
+          maxSize: 5000000,
+          //（optional）The matching priority of the chunk group, the larger the value, the higher the priority
+          priority: 0,
+          //（optional）The matching regular expression of the chunk group
+          test: "(?:)",
+        }
+      ],
+    },
+  }
 }
 ```
 
@@ -185,7 +214,7 @@ e.g.
 ### experimental.webpackSyntaxValidate
 
 - Type: `string[]`
-- 默认值: `[]`
+- Default: `[]`
 
 Experimental configuration, specify the packages that are allowed to use webpack syntax.
 
@@ -303,7 +332,7 @@ Specify the size limit of the assets file that needs to be converted to `base64`
 
 ### less
 
-- Type: `Object`
+- Type: `{ modifyVars?: Record<string, string>, sourceMap?: { sourceMapFileInline?: boolean, outputSourceFiles?: boolean }, math?: "always" | "strict" | "parens-division" | "parens" | "strict-legacy" | number, plugins?: ([string, Record<string, any>]|string)[] }`
 - Default: `{}`
 
 Specify the less configuration.
@@ -622,6 +651,13 @@ e.g.
 - Default: `false`
 
 Whether to output umd format.
+
+### useDefineForClassFields
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to use `defineProperty` to define class fields.
 
 ### watch
 
