@@ -10,6 +10,22 @@ Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, C
 
 But, everything is configurable. If you have a file type that Mako doesn't support, you can add a plugin with loader for it.
 
+## Production Grade
+
+WIP: @sorrycc
+
+## Blazing Fast
+
+Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile files in parallel. We have spend lots of time optimizing the performance of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.
+
+![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+
+Check out [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [benchmark repo](https://github.com/umijs/benchmark) for more details.
+
+Solutions used to improve the performance in Mako:
+
+- TODO: @sorrycc
+
 ## Hot Module Replacement
 
 When files change, Mako will automatically update your code in the browser. No need to refresh the page manually.
@@ -216,14 +232,6 @@ Notice: When `platform` is set to `'node'`, Mako will ignore all Node.js built-i
 When `platform` is not set or is set to `'browser'`, Mako will automatically inject a Node.js polyfill to your code. This polyfill includes all Node.js built-in modules (like `fs`, `path`, `http`, etc.) and global objects (like `process`, `Buffer`, etc.). And `process.env.NODE_ENV` will be set to `'development'` in development mode and `'production'` in production mode.
 
 Native Node.js modules polyfill is based on [node-libs-browser-okam](https://github.com/sorrycc/node-libs-browser-okam) which is forked from [node-libs-browser](https://github.com/webpack/node-libs-browser). If you are curious about which polyfill is for which module, you can checkout [the source code](https://github.com/sorrycc/node-libs-browser-okam/blob/master/index.js).
-
-## Performance
-
-Mako is designed to be fast. We use Rust for the core bundling logic, and we use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile files in parallel. We have spend lots of time optimizing the performance of Mako.
-
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
-
-Check out [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [benchmark repo](https://github.com/umijs/benchmark) for more details.
 
 ## Code Analysis
 
