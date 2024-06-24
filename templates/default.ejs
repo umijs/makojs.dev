@@ -354,7 +354,7 @@
         </header>
         <ul>
           <li>
-            <a href="/getting-started">Getting Started</a>
+            <a href="javascript:void;">Getting Started</a>
             <ul>
               <li><a href="/why-mako">Why Mako</a></li>
               <li><a href="/getting-started#install-mako">Install Mako</a></li>
@@ -446,9 +446,21 @@
       }
       return null;
     }
+    function getLinkNav() {
+      for (let i = 0; i < navs.length; i++) {
+        if (navs[i].getAttribute('href') === location.pathname) {
+          return navs[i];
+        }
+      }
+    }
     let navs = document.querySelectorAll('nav ul ul li a');
     let currentId = null;
     function highlightNav() {
+      const linkNav = getLinkNav();
+      if (linkNav) {
+        linkNav.style.fontWeight = 'bold';
+        return;
+      }
       const headerAnchor = getFirstVisibleHeaderAnchor();
       if (!headerAnchor) {
         return;
