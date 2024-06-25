@@ -50,6 +50,9 @@ export async function build() {
     console.log(`Built dist/${html}`);
   }
 
+  // Copy index.html
+  fs.copyFileSync(path.join(cwd, 'index.html'), path.join(cwd, 'dist/index-preview.html'));
+
   // generate rss feed
   await new Collection({ dirPath: path.join(docsDir, 'blog') }).generateRssFeed();
 

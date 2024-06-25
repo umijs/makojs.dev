@@ -22,7 +22,7 @@ If your company is using(or wants to use) Mako heavily, you can contact us ([sor
 
 ## Contributing
 
-If you want to contribute to Mako, please read the [Contributing Guide](/contributing).
+If you want to contribute to Mako, please read the [Contributing Guide](/docs/contributing).
 
 For those who have submitted Bugfix or Feature type PRs and are interested in participating in maintaining Mako, you can first scan the QR code below with DingTalk (mention your github id), and then I will add you to the group.
 

@@ -23,7 +23,7 @@ There are some reasons to use Mako:
 - Zero Config
 - Umi Integrated
 
-Mako is fast. Please checkout the [Blazing Fast Feature](/features#blazing-fast), [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [Benchmark Repo](https://github.com/umijs/benchmark) for more details.
+Mako is fast. Please checkout the [Blazing Fast Feature](/docs/features#blazing-fast), [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [Benchmark Repo](https://github.com/umijs/benchmark) for more details.
 
 Mako is reliable. It's used in hundreds of projects at Ant Financial, like 中后台, H5, 小程序(Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
 
