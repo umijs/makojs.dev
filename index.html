@@ -48,6 +48,11 @@
       border-collapse: collapse;
       border-spacing: 0
     }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
   </style>
   <style>
     body {
@@ -137,7 +142,7 @@
     }
 
     .description {
-      max-width: 980px;
+      max-width: 994px;
       line-height: 1.5;
       color: #ffffffcc;
       font-size: 24px;
@@ -159,6 +164,7 @@
       margin-right: 24px;
       display: inline-block;
       padding: 8px 18px;
+      cursor: pointer;
     }
 
     .actions .install-mako {
@@ -178,6 +184,7 @@
     .highlights h1 {
       font-size: 48px;
       color: #929ef4;
+      filter: drop-shadow(2px 2px 0 rgba(146, 158, 244, 0.25));
     }
 
     .highlights .box-container {
@@ -194,7 +201,7 @@
       border-radius: 8px;
       padding: 46px 25px;
       width: 388px;
-      height: 272px;
+      height: 330px;
       text-align: left;
     }
 
@@ -207,9 +214,10 @@
     .highlights .box-container .box p {
       font-size: 14px;
       color: #ffffffa6;
+      line-height: 1.5;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 8;
       overflow: hidden;
     }
 
@@ -275,10 +283,12 @@
       margin-top: 28px;
       font-size: 18px;
       color: #ffffffcc;
+      line-height: 1.5;
       text-align: center;
     }
 
     .benchmark a {
+      text-decoration: underline;
       color: #ffffffcc;
     }
 
@@ -304,8 +314,7 @@
     .footer {
       background: #24202e;
       border-top: 1px solid #2c2735;
-      padding: 60px 200px 110px 100px;
-      display: flex;
+      padding: 60px 200px 40px 100px;
       opacity: 0.7;
     }
 
@@ -348,6 +357,15 @@
       font-size: 18px;
       text-decoration: none;
     }
+
+    .footer .copyright {
+      width: 100%;
+      font-size: 16px;
+      color: #fbfbfb;
+      display: inline-block;
+      margin-top: 48px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -379,51 +397,67 @@
     <main>
       <section class="hero">
         <h1 class="tagline">An
-          <span class="accent">extremely fast</span>, <span class="accent">production-grade</span><br /> web bundler based on <span class="accent">Rust</span>.
+          <span class="accent">extremely fast</span>, <span class="accent">production-grade</span><br /> web bundler
+          based on <span class="accent">Rust</span>.
         </h1>
         <p class="description">
-          Mako is a new web bundler for Web App, Library, and Framework. It's designed to be fast, reliable, and easy to use. It has been used in houndreds of projects in production by Ant Group, and other companies. If you are looking for a modern web bundler, Mako is the right choice.
+          Mako is a new web bundler for Web App, Library, and Framework. It's designed to be fast, reliable, and easy to
+          use. It has been used in houndreds of projects in production by Ant Group, and other companies. If you are
+          looking for a modern web bundler, Mako is the right choice.
         </p>
         <p class="actions">
-          <a class="get-started" href="/docs/">Get Started</a>
-          <a class="install-mako">$ npm i @umijs/ mako -D</a>
+          <a class="get-started" href="/docs/">Getting Started</a>
+          <a class="install-mako">$ npm create mako</a>
         </p>
       </section>
       <section class="highlights">
         <h1>Why Mako</h1>
         <p class="description">
-          Mako has a lot of features that make it different from other bundlers. Here are some of the highlights, checkout <a href="/docs/features">Features</a> for more details.
+          Mako has a lot of features that make it different from other bundlers. Here are some of the highlights,
+          checkout <a href="/docs/features">Features</a> for more details.
         </p>
         <div class="box-container">
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Zero Config</h2>
-            <p>Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React, Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders, plugins, or anything else.</p>
+            <p>Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React,
+              Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders,
+              plugins, or anything else.</p>
           </div>
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Production Grade</h2>
-            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like 中后台, H5, 小程序(Partly), Low Code, Serverless, Library Development, Ant Design and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it’s different versions to ensure the compatibility.</p>
+            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like 中后台, H5, 小程序(Partly), Low Code,
+              Serverless, Library Development, Ant Design and others. We have a lot of tests and benchmarks to ensure
+              the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages
+              and it’s different versions to ensure the compatibility.</p>
           </div>
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Blazing Fast</h2>
-            <p>Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in Node.js with piscina to compile files in parallel. We have spend lots of time optimizing the performance of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.</p>
+            <p>Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in
+              Node.js with piscina to compile files in parallel. We have spend lots of time optimizing the performance
+              of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.</p>
           </div>
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Hot Module Replacement</h2>
-            <p>When files change, Mako will automatically update your code in the browser. No need to refresh the page manually. And mako has integrated React Fast Refresh, when you change a React component, it will only update the component, not the whole page.</p>
+            <p>When files change, Mako will automatically update your code in the browser. No need to refresh the page
+              manually. And mako has integrated React Fast Refresh, when you change a React component, it will only
+              update the component, not the whole page.</p>
           </div>
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Code Splitting</h2>
-            <p>Mako has built-in support for code splitting. You can use dynamic imports to split your code into separate bundles. Resulting in smaller initial bundle sizes and faster load times. Mako has a codeSplitting config that you can use to customize the behavior of code splitting. We have three strategies for code splitting.</p>
+            <p>Mako has built-in support for code splitting. You can use dynamic imports to split your code into
+              separate bundles. Resulting in smaller initial bundle sizes and faster load times. Mako has a
+              codeSplitting config that you can use to customize the behavior of code splitting. We have three
+              strategies for code splitting.</p>
           </div>
           <div class="box">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
@@ -454,72 +488,84 @@
         </div>
         <p class="benchmark">
           *这里展示 benchmark 数据来源<br />
-          <a href="/blog/benchmark">View benchmark details</a>
+          <a href="">View benchmark</a>
         </p>
       </section>
       <section class="highlights">
         <h1>Who is using</h1>
         <div class="user-container">
           <div class="user">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="40" alt="Mako Logo">
-            <p class="user-name">ANT GROUP</p>
+            <img src="https://gw.alipayobjects.com/mdn/rms_27e257/afts/img/A*70AsSL23VKYAAAAAAAAAAAAAARQnAQ" width="150"
+              alt="蚂蚁集团logo">
+          </div>
+          <div class="user">
+            <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" width="48" alt="Antd logo">
+            <p class="user-name">Ant Design</p>
+          </div>
+          <div class="user">
+            <img
+              src="https://gw.alipayobjects.com/zos/bmw-prod/598d14af-4f1c-497d-b579-5ac42cd4dd1f/k7bjua9c_w132_h130.png"
+              width="48" alt="UmiJS">
+            <p class="user-name">UmiJS</p>
           </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="left">
-        <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-          width="32" height="32" alt="Mako Logo">
-        <sup>Mako</sup>
+      <div style="display: flex;">
+        <div class="left">
+          <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
+            width="32" height="32" alt="Mako Logo">
+          <sup>Mako</sup>
+        </div>
+        <div class="right">
+          <div class="sitemap-col">
+            <h4 class="">Resources</h4>
+            <ul>
+              <li>
+                <a href="/docs">Docs</a>
+              </li>
+              <li>
+                <a href="https://github.com/umijs/mako">Github</a>
+              </li>
+              <li>
+                <a href="/docs/contact">Contact</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a> <a href="/rss.xml">RSS</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sitemap-col">
+            <h4 class="">Ecosystem</h4>
+            <ul>
+              <li>
+                <a href="https://umijs.org">Umi</a>
+              </li>
+              <li>
+                <a href="https://d.umijs.org">Dumi</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sitemap-col">
+            <h4 class="">Project</h4>
+            <ul>
+              <li>
+                <a href="https://github.com/umijs/mako/blob/master/CHANGELOG.md">Changelog</a>
+              </li>
+              <li>
+                <a href="/docs/faq">FAQ</a>
+              </li>
+              <li>
+                <a href="/docs/contributing">Contributing</a>
+              </li>
+              <li>
+                <a href="https://github.com/umijs/mako/blob/master/LICENSE">License</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="right">
-        <div class="sitemap-col">
-          <h4 class="">Resources</h4>
-          <ul>
-            <li>
-              <a href="/docs">Docs</a>
-            </li>
-            <li>
-              <a href="https://github.com/umijs/mako">Github</a>
-            </li>
-            <li>
-              <a href="/docs/contact">Contact</a>
-            </li>
-            <li>
-              <a href="/blog">Blog</a> <a href="/rss.xml">RSS</a>
-            </li>
-          </ul>
-        </div>
-        <div class="sitemap-col">
-          <h4 class="">Ecosystem</h4>
-          <ul>
-            <li>
-              <a href="https://umijs.org">Umi</a>
-            </li>
-            <li>
-              <a href="https://d.umijs.org">Dumi</a>
-            </li>
-          </ul>
-        </div>
-        <div class="sitemap-col">
-          <h4 class="">Project</h4>
-          <ul>
-            <li>
-              <a href="https://github.com/umijs/mako/blob/master/CHANGELOG.md">Changelog</a>
-            </li>
-            <li>
-              <a href="/docs/faq">FAQ</a>
-            </li>
-            <li>
-              <a href="/docs/contributing">Contributing</a>
-            </li>
-            <li>
-              <a href="https://github.com/umijs/mako/blob/master/LICENSE">License</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <sup class="copyright">Open-source MIT Licensed | Copyright ©2024-present</sup>
     </footer>
   </div>
 </body>
