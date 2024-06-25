@@ -10,7 +10,7 @@ authors:
 
 _2024-05-15 by [sorrycc](https://github.com/sorrycc)_
 
-<img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" width="120" height="120" />
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png" width="120" height="120" />
 
 朋友们，大家好！Mako 终于内测了。
 

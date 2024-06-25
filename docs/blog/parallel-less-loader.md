@@ -10,7 +10,7 @@ authors:
 
 _2024-06-18 by [xusd320](https://github.com/xusd320)_
 
-<img src="https://img.alicdn.com/imgextra/i2/O1CN01kdmA7X1FVqCPcRi3L_!!6000000000493-2-tps-584-584.png" width="120" height="120" />
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png" width="120" height="120" />
 
 less 文件编译是每个前端通用打包工具必备的能力。在 Mako 中，对于 less 文件的编译并没有基于 rust 实现，而是通过 napi 将 less 文件交给 nodejs 的 [less loader](https://lesscss.org/) ，编译好后，再返回给 rust。
 
