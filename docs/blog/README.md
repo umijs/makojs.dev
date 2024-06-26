@@ -7,7 +7,7 @@ Here you can find all the blog posts that we have written. We will write about n
 
 ## 2024
 
+- `2024-06-26` [Mako Tree Shaking 简介](/blog/mako-tree-shaking)
 - `2024-06-19` [Node 多线程的魔力 - Mako 中的 Less 并行编译](/blog/parallel-less-loader)
 - `2024-06-04` [聊下 Mako 的 Benchmark](/blog/benchmark)
 - `2024-05-15` [Mako 内测了](/blog/mako-internal-test)
-

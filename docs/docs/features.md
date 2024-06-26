@@ -12,7 +12,7 @@ But, everything is configurable. If you have a file type that Mako doesn't suppo
 
 ## Production Grade
 
-Mako is reliable. It's used in hundreds of projects at Ant Group, like 中后台, H5, 小程序(Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
+Mako is reliable. It's used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program (Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1719198069/blog/neqp18f8.png)
 
@@ -191,15 +191,18 @@ One more thing you might want to know:
 
 ## Tree Shaking
 
-Tree Shaking & Skip Modules.
+Tree shaking is a technique used to eliminate dead code by analyzing the import/export relationships between JavaScript modules. In Mako, the tree shaking feature is enabled by default in production builds and disabled in watch mode. For more information on tree shaking, refer to our [blog](/blog/mako-tree-shaking).
 
-WIP: @stormslowly
+In addition to removing dead code between modules, Mako introduces a feature called “[skipModules](/docs/config#optimization)” to eliminate redundant modules. If a module's exported variable is imported through some side-effect-free modules, this feature allows the importer module to bypass the intermediary modules and import it directly.
+
+![skipModules-demo](https://mdn.alipayobjects.com/huamei_42epzw/afts/img/A*r0UkT5JzuGQAAAAAAAAAAAAADiSRAQ/original)
 
 ## Module Concatenation
 
-or named to Scope hoisting?
+[Module concatenation](/docs/config#optimization) is an optimization feature designed to reduce both bundle size and runtime overhead. It is equivalent to the implementation found in [Webpack's optimization documentation](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules).
 
-WIP: @stormslowly
+This feature identifies groups of modules that are exclusively dependent on the modules in the same group and concatenates every groups into a single module respectively.
+
 
 ## Targets
 

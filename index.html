@@ -104,6 +104,10 @@
       text-decoration: none;
     }
 
+    .container .navbar .right a:last-child {
+      margin-right: 0;
+    }
+
     .container .navbar .right .language {
       font-size: 18px;
       color: #ffffffa6;
@@ -210,27 +214,48 @@
       overflow: hidden;
     }
 
+    .description a {
+      text-decoration: underline;
+    }
+
     .actions {
       font-size: 20px;
       color: #fff;
+      display: flex;
+      justify-content: center;
     }
 
     .actions .get-started {
       background-image: linear-gradient(90deg, #455eb7 -12%, #6c41d3 100%);
       border-radius: 8px;
       margin-right: 24px;
-      display: inline-block;
-      padding: 8px 18px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 182px;
+      height: 53px;
     }
 
     .actions .install-mako {
       background-image: linear-gradient(90deg, #32273b -5%, #352748 60%, #2e2733 112%);
       border: 1px solid rgba(151, 151, 151, 0.28);
       border-radius: 8px;
-      display: inline-block;
       padding: 8px 18px;
       font-family: "Fira Code", "Hack", "Source Code Pro", "SF Mono", "Inconsolata", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 324px;
+      height: 53px;
+    }
+
+    .actions .copy {
+      cursor: pointer;
+      background-color: inherit;
+      border: none;
+      color: #fff;
+      display: flex;
     }
 
     .highlights {
@@ -239,6 +264,7 @@
     }
 
     .highlights h1 {
+      /* font-feature-settings: kern; */
       font-size: 48px;
       color: #929ef4;
       filter: drop-shadow(2px 2px 0 rgba(146, 158, 244, 0.25));
@@ -286,6 +312,41 @@
       background-image: radial-gradient(ellipse 100% 100% at 181px 200px, #553c62 0%, #2f1d45 47.02%, #24202e 100%);
     }
 
+    .tabs .tab-nav {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .tab-btn {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-right: 32px;
+      font-size: 22px;
+      color: #ffffff9a;
+      background-color: inherit;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      background-image: linear-gradient(90deg, #2e2733 -17%, #38274e -17%, #31273b -1%, #31273a 34%, #38274f 66%, #2e2734 91%, #2e2733 104%);
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      border: 2px solid #493c56;
+      border-bottom: none;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
     .benchmark-container {
       padding: 96px;
       background-image: linear-gradient(90deg, #2e2733 -17%, #38274e -17%, #31273b -1%, #31273a 34%, #38274f 66%, #2e2734 91%, #2e2733 104%);
@@ -293,6 +354,7 @@
       border-radius: 8px;
       max-width: 1240px;
       margin: 0 auto;
+      margin-top: -1px;
     }
 
     .benchmark-item {
@@ -314,17 +376,20 @@
       padding: 6px 0;
     }
 
+    .benchmark-bar,
     .benchmark-bar-current {
-      height: 33px;
-      background-image: linear-gradient(90deg, #4d58bd -16%, #6c42d3 100%);
-      border-radius: 4px;
-    }
-
-    .benchmark-bar {
       height: 33px;
       background-image: linear-gradient(90deg, #75617c -23%, #473458 220%);
       border-radius: 4px;
-      opacity: 0.5;
+      width: 0%;
+    }
+
+    .benchmark-bar-current.mako {
+      background-image: linear-gradient(90deg, #4d58bd -16%, #6c42d3 100%);
+    }
+
+    .benchmark-bar-current.no-mako {
+      background: #8d6b9e;
     }
 
     .benchmark-time {
@@ -364,8 +429,191 @@
     }
 
     .user-container .user .user-name {
-      margin-left: 7px;
+      margin-left: 6px;
       color: #fff;
+      text-align: left;
+    }
+
+    .footer {
+      background: #24202e;
+      border-top: 1px solid #2c2735;
+      padding: 60px 0 40px;
+      opacity: 0.7;
+    }
+
+    .footer .top {
+      display: flex;
+      padding-left: 100px;
+      padding-right: 225px;
+    }
+
+    .footer .top .left {
+      display: flex;
+    }
+
+    .footer .top .left img {
+      height: 32px;
+    }
+
+    .footer .top .left sup {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 14px;
+      line-height: 32px;
+    }
+
+    .footer .top .right {
+      margin-left: 25%;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .footer .top .right .sitemap-col h4 {
+      font-size: 24px;
+      color: #ffffff3f;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .footer .top .right .sitemap-col ul>li {
+      margin-bottom: 24px;
+    }
+
+    .footer .top .right .sitemap-col ul>li a {
+      color: #fbfbfb;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .footer .top .right .sitemap-col .rss {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+
+    .footer .copyright {
+      width: 100%;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.65);
+      display: inline-block;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .container .tip {
+        font-size: 14px;
+      }
+
+      .container .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        margin: 0 20px;
+      }
+
+      .container .navbar .left,
+      .container .navbar .right {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .container .navbar .right .language {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero .tagline {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 18px;
+        padding: 0 20px;
+      }
+
+      .actions {
+        font-size: 14px;
+        padding: 0 20px;
+      }
+
+      .highlights .box-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .highlights .box-container .box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+
+      .tabs .tab-nav {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .tab-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .tab-btn.active {
+        border: none;
+      }
+
+      .benchmark-container {
+        width: 90%;
+        padding: 36px 10px;
+      }
+
+      .benchmark-item {
+        padding: 0 24px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .benchmark-title {
+        width: 60px;
+      }
+
+      .benchmark-title,
+      .benchmark-time {
+        font-size: 18px;
+      }
+
+      .benchmark-w,
+      .benchmark-bar,
+      .benchmark-bar-current {
+        width: 100%;
+      }
+
+      .user-container {
+        padding: 0 20px;
+      }
+
+      .user-container .user {
+        margin-right: 5px;
+      }
+
+      .footer .top {
+        padding: 0 20px;
+      }
+
+      .footer .top .left {
+        display: none;
+      }
+
+      .footer .top .right {
+        margin-left: 0;
+        justify-content: space-around;
+      }
+
+      .footer .right .sitemap-col:last-child {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -382,11 +630,11 @@
       <nav class="right">
         <a href="/docs">Docs</a>
         <a href="/blog">Blog</a>
-        <div class="language">
+        <!-- <div class="language">
           <span>中</span>
           <span>｜</span>
           <span class="active">EN</span>
-        </div>
+        </div> -->
         <a class="github" href="https://github.com/umijs/mako">
           <img
             src="data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTggMEMzLjU4IDAgMCAzLjU4IDAgOEMwIDExLjU0IDIuMjkgMTQuNTMgNS40NyAxNS41OUM1Ljg3IDE1LjY2IDYuMDIgMTUuNDIgNi4wMiAxNS4yMUM2LjAyIDE1LjAyIDYuMDEgMTQuMzkgNi4wMSAxMy43MkM0IDE0LjA5IDMuNDggMTMuMjMgMy4zMiAxMi43OEMzLjIzIDEyLjU1IDIuODQgMTEuODQgMi41IDExLjY1QzIuMjIgMTEuNSAxLjgyIDExLjEzIDIuNDkgMTEuMTJDMy4xMiAxMS4xMSAzLjU3IDExLjcgMy43MiAxMS45NEM0LjQ0IDEzLjE1IDUuNTkgMTIuODEgNi4wNSAxMi42QzYuMTIgMTIuMDggNi4zMyAxMS43MyA2LjU2IDExLjUzQzQuNzggMTEuMzMgMi45MiAxMC42NCAyLjkyIDcuNThDMi45MiA2LjcxIDMuMjMgNS45OSAzLjc0IDUuNDNDMy42NiA1LjIzIDMuMzggNC40MSAzLjgyIDMuMzFDMy44MiAzLjMxIDQuNDkgMy4xIDYuMDIgNC4xM0M2LjY2IDMuOTUgNy4zNCAzLjg2IDguMDIgMy44NkM4LjcgMy44NiA5LjM4IDMuOTUgMTAuMDIgNC4xM0MxMS41NSAzLjA5IDEyLjIyIDMuMzEgMTIuMjIgMy4zMUMxMi42NiA0LjQxIDEyLjM4IDUuMjMgMTIuMyA1LjQzQzEyLjgxIDUuOTkgMTMuMTIgNi43IDEzLjEyIDcuNThDMTMuMTIgMTAuNjUgMTEuMjUgMTEuMzMgOS40NyAxMS41M0M5Ljc2IDExLjc4IDEwLjAxIDEyLjI2IDEwLjAxIDEzLjAxQzEwLjAxIDE0LjA4IDEwIDE0Ljk0IDEwIDE1LjIxQzEwIDE1LjQyIDEwLjE1IDE1LjY3IDEwLjU1IDE1LjU5QzEzLjcxIDE0LjUzIDE2IDExLjUzIDE2IDhDMTYgMy41OCAxMi40MiAwIDggMFoiIHRyYW5zZm9ybT0ic2NhbGUoNjQpIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
@@ -407,7 +655,17 @@
         </p>
         <p class="actions">
           <a class="get-started" href="/docs/">Getting Started</a>
-          <a class="install-mako">$ npm create mako</a>
+          <a class="install-mako">
+            <code>$ <span class="content">npm create umi</span></code>
+            <button class="copy">
+              <svg viewBox="64 64 896 896" focusable="false" data-icon="copy" width="1.5em" height="1.5em"
+                fill="currentColor" aria-hidden="true">
+                <path
+                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z">
+                </path>
+              </svg>
+            </button>
+          </a>
         </p>
       </section>
       <section class="highlights">
@@ -418,77 +676,251 @@
         </p>
         <div class="box-container">
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">🔮</p>
             <h2>Zero Config</h2>
             <p>Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React,
               Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders,
               plugins, or anything else.</p>
           </div>
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">💡</p>
             <h2>Production Grade</h2>
-            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like 中后台, H5, 小程序(Partly), Low Code,
-              Serverless, Library Development, Ant Design and others. We have a lot of tests and benchmarks to ensure
-              the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages
+            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program
+              (Partly), Low Code,
+              Serverless, Library Development, Ant Design and others. We have also tested Mako in thousands of old projects, and thousands of npm packages
               and it’s different versions to ensure the compatibility.</p>
           </div>
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">🚀</p>
             <h2>Blazing Fast</h2>
             <p>Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in
               Node.js with piscina to compile files in parallel. We have spend lots of time optimizing the performance
               of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.</p>
           </div>
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">📡</p>
             <h2>Hot Module Replacement</h2>
             <p>When files change, Mako will automatically update your code in the browser. No need to refresh the page
               manually. And mako has integrated React Fast Refresh, when you change a React component, it will only
               update the component, not the whole page.</p>
           </div>
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">🗃</p>
             <h2>Code Splitting</h2>
             <p>Mako has built-in support for code splitting. You can use dynamic imports to split your code into
               separate bundles. Resulting in smaller initial bundle sizes and faster load times. Mako has a
-              codeSplitting config that you can use to customize the behavior of code splitting. We have three
-              strategies for code splitting.</p>
+              codeSplitting config that you can use to customize the behavior of code splitting.</p>
           </div>
           <div class="box">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
-              width="32" height="32" alt="Mako Logo">
+            <p style="font-size:2rem;">🗞</p>
             <h2>Module Concatenation</h2>
-            <p>...</p>
+            <p>Module Concatenation is an optimization feature designed to reduce both bundle size and runtime overhead. Mako has an equivalent implementation found in Webpack's optimization documentation.</p>
           </div>
         </div>
       </section>
       <section class="highlights">
         <h1>Benchmark</h1>
         <p class="description">Mako is designed to be blazing fast.</p>
-        <div class="benchmark-container">
-          <div class="benchmark-item">
-            <p class="benchmark-title">Mako</p>
-            <div class="benchmark-w">
-              <div class="benchmark-bar-current" style="width: calc(6%)"></div>
-            </div>
-            <div class="benchmark-time">00.23s</div>
+        <div class="tabs">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab1">Code Start</button>
+            <button class="tab-btn" data-tab="tab2">Root HMR</button>
+            <button class="tab-btn" data-tab="tab3">Leaf HMR</button>
+            <button class="tab-btn" data-tab="tab4">Code Build</button>
           </div>
-          <div class="benchmark-item">
-            <p class="benchmark-title">Pnpm</p>
-            <div class="benchmark-w">
-              <div class="benchmark-bar" style="width: calc(20%)"></div>
+          <div class="benchmark-container">
+            <div id="tab1" class="tab-pane active">
+              <div class="benchmark-item">
+                <p class="benchmark-title">Mako</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.559"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Rsbuild</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.955"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Farm</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="1.005"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Vite</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="1.150"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Webpack</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="4.897"></div>
+              </div>
             </div>
-            <div class="benchmark-time">06.23s</div>
+            <div id="tab2" class="tab-pane">
+              <div class="benchmark-item">
+                <p class="benchmark-title">Mako</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.065"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Rsbuild</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.154"></div>
+              </div>
+              <!-- <div class="benchmark-item">
+                <p class="benchmark-title">Farm</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time"></div>
+              </div> -->
+              <div class="benchmark-item">
+                <p class="benchmark-title">Vite</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.486"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Webpack</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.301"></div>
+              </div>
+            </div>
+            <div id="tab3" class="tab-pane">
+              <div class="benchmark-item">
+                <p class="benchmark-title">Mako</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.057"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Rsbuild</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.144"></div>
+              </div>
+              <!-- <div class="benchmark-item">
+                <p class="benchmark-title">Farm</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time"></div>
+              </div> -->
+              <div class="benchmark-item">
+                <p class="benchmark-title">Vite</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.464"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Webpack</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.243"></div>
+              </div>
+            </div>
+            <div id="tab4" class="tab-pane">
+              <div class="benchmark-item">
+                <p class="benchmark-title">Mako</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.629"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Rsbuild</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.679"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Farm</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="0.937"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Vite</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="1.345"></div>
+              </div>
+              <div class="benchmark-item">
+                <p class="benchmark-title">Webpack</p>
+                <div class="benchmark-w">
+                  <div class="benchmark-bar">
+                    <div class="benchmark-bar-current no-mako"></div>
+                  </div>
+                </div>
+                <div class="benchmark-time" data-time="5.430"></div>
+              </div>
+            </div>
           </div>
         </div>
         <p class="benchmark">
-          *这里展示 benchmark 数据来源<br />
-          <a href="">View benchmark</a>
+          <a href="https://github.com/umijs/benchmark">View benchmark</a>
         </p>
       </section>
       <section class="highlights">
@@ -511,7 +943,7 @@
       </section>
     </main>
     <footer class="footer">
-      <div style="display: flex;">
+      <div class="top">
         <div class="left">
           <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
             width="32" height="32" alt="Mako Logo">
@@ -531,7 +963,15 @@
                 <a href="/docs/contact">Contact</a>
               </li>
               <li>
-                <a href="/blog">Blog</a> <a href="/rss.xml">RSS</a>
+                <a href="/blog">Blog</a>
+                <a href="/rss.xml">
+                  <svg class="rss" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd"
+                      d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
@@ -568,6 +1008,98 @@
       <sup class="copyright">Made with ❤️ by Ant Group and Mako Community</sup>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+      const copyContent = document.querySelector('.content');
+      const copyButton = document.querySelector('.copy');
+
+      function switchTab(tabId) {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+        const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
+        const selectedPane = document.getElementById(tabId);
+
+        if (selectedButton && selectedPane) {
+          selectedButton.classList.add('active');
+          selectedPane.classList.add('active');
+          runBenchmarksAnimation();
+        }
+      }
+
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const copyStatus = copyButton.querySelector('span');
+          if (!copyStatus) {
+            copyButton.innerHTML = "<span>✔</span>";
+          }
+        }).catch(err => console.error('Could not copy text: ', err));
+      }
+
+      function getMaxTime() {
+        const activeTab = document.querySelector('.tab-pane.active');
+        const timeElements = activeTab.querySelectorAll('.benchmark-time');
+        let maxTime = 0;
+
+        timeElements.forEach(element => {
+          const time = parseFloat(element.getAttribute('data-time'));
+          if (time > maxTime) {
+            maxTime = time;
+          }
+        });
+
+        return maxTime;
+      }
+
+      function runBenchmarksAnimation() {
+        const activeTab = document.querySelector('.tab-pane.active');
+        const benchmarks = activeTab.querySelectorAll('.benchmark-item');
+        const maxTime = getMaxTime();
+
+        benchmarks.forEach(benchmark => {
+          const bar = benchmark.querySelector('.benchmark-bar');
+          const barCurrent = benchmark.querySelector('.benchmark-bar-current');
+          const timeElement = benchmark.querySelector('.benchmark-time');
+          const time = parseFloat(timeElement.getAttribute('data-time'));
+
+          if (!time) return;
+
+          bar.style.width = `${time / maxTime * 100}%`;
+          barCurrent.style.width = '0%';
+          barCurrent.style.transition = 'none';
+          requestAnimationFrame(() => {
+            barCurrent.style.transition = `width ${time}s ease-in-out`;
+            barCurrent.style.width = `100%`;
+          });
+
+          let currentTime = 0;
+          timeElement.textContent = '0s';
+          const totalSteps = time * 100;
+          const intervalTime = (time * 1000) / totalSteps;
+
+          const interval = setInterval(() => {
+            currentTime += time / totalSteps;
+            if (currentTime >= time) {
+              currentTime = time;
+              clearInterval(interval);
+            }
+            timeElement.textContent = currentTime.toFixed(2) + 's';
+          }, intervalTime);
+        });
+      }
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => switchTab(button.getAttribute('data-tab')));
+      });
+
+      copyButton.addEventListener('click', () => copyToClipboard(copyContent.textContent));
+
+      runBenchmarksAnimation();
+    });
+  </script>
 </body>
 
 </html>
