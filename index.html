@@ -104,6 +104,10 @@
       text-decoration: none;
     }
 
+    .container .navbar .right a:last-child {
+      margin-right: 0;
+    }
+
     .container .navbar .right .language {
       font-size: 18px;
       color: #ffffffa6;
@@ -254,6 +258,8 @@
       font-size: 22px;
       color: #ffffff9a;
       background-color: inherit;
+      position: relative;
+      z-index: 1;
     }
 
     .tab-btn.active {
@@ -261,7 +267,7 @@
       background-image: linear-gradient(90deg, #2e2733 -17%, #38274e -17%, #31273b -1%, #31273a 34%, #38274f 66%, #2e2734 91%, #2e2733 104%);
       border-top-right-radius: 8px;
       border-top-left-radius: 8px;
-      border: 2px solid #2c2735;
+      border: 2px solid #493c56;
       border-bottom: none;
     }
 
@@ -280,6 +286,7 @@
       border-radius: 8px;
       max-width: 1240px;
       margin: 0 auto;
+      margin-top: -1px;
     }
 
     .benchmark-item {
@@ -351,8 +358,9 @@
     }
 
     .user-container .user .user-name {
-      margin-left: 7px;
+      margin-left: 6px;
       color: #fff;
+      text-align: left;
     }
 
     .footer {
@@ -362,15 +370,21 @@
       opacity: 0.7;
     }
 
-    .footer .left {
+    .footer .top {
+      display: flex;
+      padding-left: 100px;
+      padding-right: 225px;
+    }
+
+    .footer .top .left {
       display: flex;
     }
 
-    .footer .left img {
+    .footer .top .left img {
       height: 32px;
     }
 
-    .footer .left sup {
+    .footer .top .left sup {
       color: #fff;
       font-size: 18px;
       font-weight: 500;
@@ -378,31 +392,31 @@
       line-height: 32px;
     }
 
-    .footer .right {
+    .footer .top .right {
       margin-left: 25%;
       display: flex;
       flex: 1;
       justify-content: space-between;
     }
 
-    .footer .right .sitemap-col h4 {
+    .footer .top .right .sitemap-col h4 {
       font-size: 24px;
       color: #ffffff3f;
       font-weight: 500;
       margin-bottom: 24px;
     }
 
-    .footer .right .sitemap-col ul>li {
+    .footer .top .right .sitemap-col ul>li {
       margin-bottom: 24px;
     }
 
-    .footer .right .sitemap-col ul>li a {
+    .footer .top .right .sitemap-col ul>li a {
       color: #fbfbfb;
       font-size: 18px;
       text-decoration: none;
     }
 
-    .footer .right .sitemap-col .rss {
+    .footer .top .right .sitemap-col .rss {
       width: 22px;
       height: 22px;
       vertical-align: middle;
@@ -415,6 +429,119 @@
       display: inline-block;
       margin-top: 48px;
       text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .container .tip {
+        font-size: 14px;
+      }
+
+      .container .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        margin: 0 20px;
+      }
+
+      .container .navbar .left,
+      .container .navbar .right {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .container .navbar .right .language {
+        display: flex;
+      }
+
+      .hero .tagline {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 18px;
+        padding: 0 20px;
+      }
+
+      .actions {
+        font-size: 14px;
+      }
+
+      .highlights .box-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .highlights .box-container .box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+
+      .tabs .tab-nav {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .tab-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .tab-btn.active {
+        border: none;
+      }
+
+      .benchmark-container {
+        width: 90%;
+        padding: 36px 10px;
+      }
+
+      .benchmark-item {
+        padding: 0 24px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .benchmark-title {
+        width: 60px;
+      }
+
+      .benchmark-title,
+      .benchmark-time {
+        font-size: 18px;
+      }
+
+      .benchmark-w,
+      .benchmark-bar,
+      .benchmark-bar-current {
+        width: 100%;
+      }
+
+      .user-container {
+        padding: 0 20px;
+        `
+      }
+
+      .user-container .user {
+        margin-right: 5px;
+      }
+
+      .footer .top {
+        padding: 0 20px;
+      }
+
+      .footer .top .left {
+        display: none;
+      }
+
+      .footer .top .right {
+        margin-left: 0;
+        justify-content: space-around;
+      }
+
+      .footer .right .sitemap-col:last-child {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -457,7 +584,7 @@
         </p>
         <p class="actions">
           <a class="get-started" href="/docs/">Getting Started</a>
-          <a class="install-mako">$ npm create umi&nbsp;&nbsp;&nbsp;
+          <a class="install-mako">$ <span class="content">npm create umi</span>&nbsp;&nbsp;
             <button class="copy">
               <svg viewBox="64 64 896 896" focusable="false" data-icon="copy" width="1em" height="1em"
                 fill="currentColor" aria-hidden="true">
@@ -488,7 +615,8 @@
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
               width="32" height="32" alt="Mako Logo">
             <h2>Production Grade</h2>
-            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program (Partly), Low Code,
+            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program
+              (Partly), Low Code,
               Serverless, Library Development, Ant Design and others. We have a lot of tests and benchmarks to ensure
               the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages
               and it’s different versions to ensure the compatibility.</p>
@@ -583,7 +711,7 @@
       </section>
     </main>
     <footer class="footer">
-      <div style="display: flex; padding-left: 100px; padding-right: 225px;">
+      <div class="top">
         <div class="left">
           <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
             width="32" height="32" alt="Mako Logo">
@@ -653,9 +781,8 @@
     document.addEventListener('DOMContentLoaded', function () {
       const tabButtons = document.querySelectorAll('.tab-btn');
       const tabPanes = document.querySelectorAll('.tab-pane');
+      const copyContent = document.querySelector('.content');
       const copyButton = document.querySelector('.copy');
-      const copyStatus = document.querySelector('.copy span');
-      const svgElement = document.querySelector('.copy svg');
 
       function switchTab(tabId) {
         tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -672,20 +799,19 @@
 
       function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
+          const copyStatus = copyButton.querySelector('span');
           if (!copyStatus) {
-            svgElement.insertAdjacentHTML('beforebegin', '<span style="margin-right: 8px;">Copied!</span>');
+            const svgElement = copyButton.querySelector('svg');
+            svgElement.insertAdjacentHTML('beforebegin', '<span style="margin-right: 8px; font-size: 12px; vertical-align: top;">Copied</span>');
           }
         }).catch(err => console.error('Could not copy text: ', err));
       }
 
-      document.addEventListener('click', function (e) {
-        if (e.target.classList.contains('tab-btn')) {
-          const tabId = e.target.getAttribute('data-tab');
-          switchTab(tabId);
-        } else if (e.target.closest('.copy')) {
-          copyToClipboard('npm create mako');
-        }
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => switchTab(button.getAttribute('data-tab')));
       });
+
+      copyButton.addEventListener('click', () => copyToClipboard(copyContent.textContent));
     });
   </script>
 </body>
