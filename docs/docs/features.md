@@ -191,15 +191,16 @@ One more thing you might want to know:
 
 ## Tree Shaking
 
-Tree shaking is a way to eliminate dead code by analyzing import/export between JavaScript Modules. In Mako, Tree shaking feature is enabled by default in production build and disabled in watch mode. If you want to know more about Tree Shaking your reference to the [blog](/blog/mako-tree-shaking).
+Tree shaking is a technique used to eliminate dead code by analyzing the import/export relationships between JavaScript modules. In Mako, the tree shaking feature is enabled by default in production builds and disabled in watch mode. For more information on tree shaking, refer to our [blog](/blog/mako-tree-shaking).
 
-Besides eliminating dead code between modules, Mako also introduce a feature called “[skipModules](http://localhost:3000/docs/config#optimization)” to remove redundant Modules. If a module exported variable is imported through some side effects free modules, this feature will  make the importer module  by pass the middle modules and import it directly.
+In addition to removing dead code between modules, Mako introduces a feature called “[skipModules](/docs/config#optimization)” to eliminate redundant modules. If a module's exported variable is imported through some side-effect-free modules, this feature allows the importer module to bypass the intermediary modules and import it directly.
 
 ## Module Concatenation
 
-Module Concatenation is  an optimization feature to reduce both bundle size and runtime overhead. It’s a equivalent implementation of https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules in webpack.
-This feature will find all the module groups  that all modules in a group depended exclusively by modules in this group.
-And then concatenate a group into one module.
+[Module concatenation](/docs/config#optimization) is an optimization feature designed to reduce both bundle size and runtime overhead. It is equivalent to the implementation found in [Webpack's optimization documentation](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules).
+
+This feature identifies groups of modules that are exclusively dependent on the modules in the same group and concatenates every groups into a single module respectively.
+
 
 ## Targets
 
