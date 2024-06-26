@@ -12,7 +12,7 @@ But, everything is configurable. If you have a file type that Mako doesn't suppo
 
 ## Production Grade
 
-Mako is reliable. It's used in hundreds of projects at Ant Group, like 中后台, H5, 小程序(Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
+Mako is reliable. It's used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program (Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1719198069/blog/neqp18f8.png)
 
