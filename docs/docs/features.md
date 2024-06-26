@@ -50,8 +50,8 @@ And there're something you might want to know:
 
 - `const enum` is not supported, you should use `enum` instead. Since `const enum` needs to parse the whole project, and in Mako, we transpile files one by one separately.
 - Mako won't emit type declarations. If you want to do this, use `tsc --noEmit` instead.
-- Mako won't check types by default. If you want to do this, set [`forkTsChecker`](/docs/config#forktschecker) to true in the config, or use `tsc` instead.
-- Mako don't parse your `tsconfig.json` file. If you want to enable features like [`useDefineForClassFields`](/docs/config#usedefineforclassfields), you should set it in the config.
+- Mako won't check types by default. If you want to do this, set [`forkTsChecker`](./config#forktschecker) to true in the config, or use `tsc` instead.
+- Mako don't parse your `tsconfig.json` file. If you want to enable features like [`useDefineForClassFields`](./config#usedefineforclassfields), you should set it in the config.
 
 ## Less
 
@@ -64,7 +64,7 @@ Since less is used heavily in Ant Financial, Mako has been optimized for this. W
 And there're something you might want to know:
 
 - Mako's `alias` config should be work properly with Less files.
-- If you want to use Less plugins, or modify theme vars, or enable maths, specify them in the config with [`less`](/docs/config#less) field.
+- If you want to use Less plugins, or modify theme vars, or enable maths, specify them in the config with [`less`](./config#less) field.
 
 ## CSS Modules
 
@@ -84,7 +84,7 @@ console.log(styles.container); // styles.container will be a string
 
 And there're something you might want to know:
 
-- Mako has an [`autoCSSModules`](/docs/config#autocssmodules) config. If not enabled, only files with `.module.css` or `.module.less` will be treated as CSS Modules; if enabled, named imports like `import styles from './a.css'` will also be treated as CSS Modules.
+- Mako has an [`autoCSSModules`](./config#autocssmodules) config. If not enabled, only files with `.module.css` or `.module.less` will be treated as CSS Modules; if enabled, named imports like `import styles from './a.css'` will also be treated as CSS Modules.
 
 ## SVG as React Component
 
@@ -177,7 +177,7 @@ import('./module').then(module => {
 });
 ```
 
-Mako has a [`codeSplitting`](/docs/config#codesplitting) config that you can use to customize the behavior of code splitting. We have three strategies for code splitting:
+Mako has a [`codeSplitting`](./config#codesplitting) config that you can use to customize the behavior of code splitting. We have three strategies for code splitting:
 
 - `auto`: Mako will automatically split your code based on the size of the module.
 - `granular`: More granular code splitting, it's suggested to use this in production.
@@ -187,26 +187,26 @@ Mako has a [`codeSplitting`](/docs/config#codesplitting) config that you can use
 
 One more thing you might want to know:
 
-- Somethings you might want to keep only one js file and one css file after build, you can use [`dynamicImportToRequire`](/docs/config#dynamicimporttorequire) config to transform dynamic imports to require.
+- Somethings you might want to keep only one js file and one css file after build, you can use [`dynamicImportToRequire`](./config#dynamicimporttorequire) config to transform dynamic imports to require.
 
 ## Tree Shaking
 
 Tree shaking is a technique used to eliminate dead code by analyzing the import/export relationships between JavaScript modules. In Mako, the tree shaking feature is enabled by default in production builds and disabled in watch mode. For more information on tree shaking, refer to our [blog](/blog/mako-tree-shaking).
 
-In addition to removing dead code between modules, Mako introduces a feature called “[skipModules](/docs/config#optimization)” to eliminate redundant modules. If a module's exported variable is imported through some side-effect-free modules, this feature allows the importer module to bypass the intermediary modules and import it directly.
+In addition to removing dead code between modules, Mako introduces a feature called “[skipModules](./config#optimization)” to eliminate redundant modules. If a module's exported variable is imported through some side-effect-free modules, this feature allows the importer module to bypass the intermediary modules and import it directly.
 
 ![skipModules-demo](https://mdn.alipayobjects.com/huamei_42epzw/afts/img/A*r0UkT5JzuGQAAAAAAAAAAAAADiSRAQ/original)
 
 ## Module Concatenation
 
-[Module concatenation](/docs/config#optimization) is an optimization feature designed to reduce both bundle size and runtime overhead. It is equivalent to the implementation found in [Webpack's optimization documentation](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules).
+[Module concatenation](./config#optimization) is an optimization feature designed to reduce both bundle size and runtime overhead. It is equivalent to the implementation found in [Webpack's optimization documentation](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules).
 
 This feature identifies groups of modules that are exclusively dependent on the modules in the same group and concatenates every groups into a single module respectively.
 
 
 ## Targets
 
-Mako has a [`targets`](/docs/config#targets) config that you can use to specify the browsers that you want to target. Mako will automatically compile your code to be compatible with the specified browsers, including injecting ~~polyfills~~(not yet), helpers and more.
+Mako has a [`targets`](./config#targets) config that you can use to specify the browsers that you want to target. Mako will automatically compile your code to be compatible with the specified browsers, including injecting ~~polyfills~~(not yet), helpers and more.
 
 ```js
 {
@@ -217,7 +217,7 @@ Mako has a [`targets`](/docs/config#targets) config that you can use to specify 
 }
 ```
 
-When you want to build for node, you should also set [`platform`](/docs/config#platform) to `node` and [`dynamicImportToRequire`](/docs/config#dynamicimporttorequire) to true in the config. (Why need to set `dynamicImportToRequire` to true? Because the runtime does not yet support node-style chunk loading.)
+When you want to build for node, you should also set [`platform`](./config#platform) to `node` and [`dynamicImportToRequire`](./config#dynamicimporttorequire) to true in the config. (Why need to set `dynamicImportToRequire` to true? Because the runtime does not yet support node-style chunk loading.)
 
 ```js
 {
@@ -236,7 +236,7 @@ Native Node.js modules polyfill is based on [node-libs-browser-okam](https://git
 
 ## Code Analysis
 
-Mako has a basic built-in code analysis system that will show you the size of your code and the size of each module. Enable it by setting [`analyze`](/docs/config#analyze) in the config.
+Mako has a basic built-in code analysis system that will show you the size of your code and the size of each module. Enable it by setting [`analyze`](./config#analyze) in the config.
 
 ```js
 {
@@ -254,8 +254,8 @@ Mako has a built-in RSC (React Server Components) support, but it's still experi
 
 Mako has two config for RSC:
 
-- [`rscServer`](/docs/config#rscserver): Config for RSC server side.
-- [`rscClient`](/docs/config#rscclient): Config for RSC client side.
+- [`rscServer`](./config#rscserver): Config for RSC server side.
+- [`rscClient`](./config#rscclient): Config for RSC client side.
 
 You can find a simple example in the [examples/rsc](https://github.com/umijs/mako/tree/master/examples/rsc).
 
@@ -271,7 +271,7 @@ You can find a simple example in the [examples/rsc](https://github.com/umijs/mak
 }
 ```
 
-Checkout [Bundle with Umi](/docs/getting-started#bundle-with-umi) for more details.
+Checkout [Bundle with Umi](./getting-started#bundle-with-umi) for more details.
 
 ## Libraries
 

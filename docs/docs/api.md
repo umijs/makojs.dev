@@ -39,7 +39,7 @@ The root directory of the project.
 - Type: `Object`
 - Default: `{}`
 
-Checkout [config](./config.md) for more details.
+Checkout [config](./config) for more details.
 
 #### watch
 
