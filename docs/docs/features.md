@@ -191,15 +191,15 @@ One more thing you might want to know:
 
 ## Tree Shaking
 
-Tree Shaking & Skip Modules.
+Tree shaking is a way to eliminate dead code by analyzing import/export between JavaScript Modules. In Mako, Tree shaking feature is enabled by default in production build and disabled in watch mode. If you want to know more about Tree Shaking your reference to the [blog](/blog/mako-tree-shaking).
 
-WIP: @stormslowly
+Besides eliminating dead code between modules, Mako also introduce a feature called “[skipModules](http://localhost:3000/docs/config#optimization)” to remove redundant Modules. If a module exported variable is imported through some side effects free modules, this feature will  make the importer module  by pass the middle modules and import it directly.
 
 ## Module Concatenation
 
-or named to Scope hoisting?
-
-WIP: @stormslowly
+Module Concatenation is  an optimization feature to reduce both bundle size and runtime overhead. It’s a equivalent implementation of https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules in webpack.
+This feature will find all the module groups  that all modules in a group depended exclusively by modules in this group.
+And then concatenate a group into one module.
 
 ## Targets
 
