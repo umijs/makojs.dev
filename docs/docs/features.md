@@ -195,6 +195,8 @@ Tree shaking is a technique used to eliminate dead code by analyzing the import/
 
 In addition to removing dead code between modules, Mako introduces a feature called “[skipModules](/docs/config#optimization)” to eliminate redundant modules. If a module's exported variable is imported through some side-effect-free modules, this feature allows the importer module to bypass the intermediary modules and import it directly.
 
+![skipModules-demo](https://mdn.alipayobjects.com/huamei_42epzw/afts/img/A*r0UkT5JzuGQAAAAAAAAAAAAADiSRAQ/original)
+
 ## Module Concatenation
 
 [Module concatenation](/docs/config#optimization) is an optimization feature designed to reduce both bundle size and runtime overhead. It is equivalent to the implementation found in [Webpack's optimization documentation](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules).
