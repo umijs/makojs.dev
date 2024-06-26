@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mako - Extremely fast, Production-grade web bundler</title>
+  <title>Mako - 极快、生产级的构建工具</title>
   <link rel="icon"
     href="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" />
   <style>
@@ -569,8 +569,9 @@
 </head>
 
 <body>
+
   <div class="container">
-    <p class="tip"><a href="/blog/mako-open-sourced">Mako is open sourced! Check out the release article →</a></p>
+    <p class="tip"><a href="/blog/mako-open-sourced">Mako 已开源！查看发布文章 →</a></p>
     <div class="navbar">
       <div class="left">
         <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
@@ -578,12 +579,12 @@
         <sup class="title">Mako</sup>
       </div>
       <nav class="right">
-        <a href="/docs">Docs</a>
-        <a href="/blog">Blog</a>
+        <a href="/docs">文档</a>
+        <a href="/blog">博客</a>
         <div class="language">
-          <a href="/zh-CN/">中</a>
+          <span class="active">中</span>
           <span>｜</span>
-          <span class="active">EN</span>
+          <a href="/index-preview">EN</a>
         </div>
         <a class="github" href="https://github.com/umijs/mako">
           <img
@@ -594,17 +595,16 @@
     </div>
     <main>
       <section class="hero">
-        <h1 class="tagline">An
-          <span class="accent">extremely fast</span>, <span class="accent">production-grade</span><br /> web bundler
-          based on <span class="accent">Rust</span>.
+        <h1 class="tagline">一个
+          <span class="accent">极快的</span>，<span class="accent">生产级</span><br /> Web 打包工具，基于 <span
+            class="accent">Rust</span>。
         </h1>
         <p class="description">
-          Mako is a new web bundler for Web App, Library, and Framework. It's designed to be fast, reliable, and easy to
-          use. It has been used in houndreds of projects in production by Ant Group, and other companies. If you are
-          looking for a modern web bundler, Mako is the right choice.
+          Mako 是一个新的 Web 打包工具，适用于 Web 应用、库和框架。它被设计得快速、可靠且易于使用。Mako 已被蚂蚁集团和其他公司在数百个生产项目中使用。如果你正在寻找一个现代的 Web 打包工具，Mako
+          是正确的选择。
         </p>
         <p class="actions">
-          <a class="get-started" href="/docs/">Getting Started</a>
+          <a class="get-started" href="/docs/">快速开始</a>
           <a class="install-mako">
             <code>$ <span class="content">npm create mako</span></code>
             <button class="copy">
@@ -619,66 +619,55 @@
         </p>
       </section>
       <section class="highlights">
-        <h1>Why Mako</h1>
+        <h1>为什么选择 Mako</h1>
         <p class="description">
-          Mako has a lot of features that make it different from other bundlers. Here are some of the highlights,
-          checkout <a href="/docs/features">Features</a> for more details.
+          Mako 具有许多使其不同于其他打包工具的功能。以下是一些亮点，更多详情请查看 <a href="/docs/features">功能</a>。
         </p>
         <div class="box-container">
           <div class="box">
             <p style="font-size:2rem;">🔮</p>
-            <h2>Zero Config</h2>
-            <p>Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React,
-              Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders,
-              plugins, or anything else.</p>
+            <h2>零配置</h2>
+            <p>从一个 JS/TS 文件开始，Mako 将处理其余部分。开箱即支持 TypeScript、Less、CSS、CSS Modules、React、图像、字体、WASM、Node Polyfill
+              等。不需要配置加载器、插件或其他任何东西。</p>
           </div>
           <div class="box">
             <p style="font-size:2rem;">💡</p>
-            <h2>Production Grade</h2>
-            <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program
-              (Partly), Low Code,
-              Serverless, Library Development, Ant Design and others. We have also tested Mako in thousands of old
-              projects, and thousands of npm packages
-              and it’s different versions to ensure the compatibility.</p>
+            <h2>生产级</h2>
+            <p>Mako 是可靠的。它被蚂蚁集团的数百个项目使用，如 Web 应用、混合应用、小程序（部分）、低代码、Serverless、库开发、Ant Design 等。我们还在数千个旧项目和数千个 npm
+              包以及不同版本中测试了 Mako，以确保兼容性。</p>
           </div>
           <div class="box">
             <p style="font-size:2rem;">🚀</p>
-            <h2>Blazing Fast</h2>
-            <p>Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in
-              Node.js with piscina to compile files in parallel. We have spend lots of time optimizing the performance
-              of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.</p>
+            <h2>快如闪电</h2>
+            <p>Mako 被设计得快如闪电。我们在核心打包逻辑中使用 Rust，并在 Node.js 中使用 piscina 来并行编译文件。我们花了很多时间优化 Mako 的性能。在基准测试中，Mako 比其他 Rust
+              打包工具和 Webpack 更快。</p>
           </div>
           <div class="box">
             <p style="font-size:2rem;">📡</p>
-            <h2>Hot Module Replacement</h2>
-            <p>When files change, Mako will automatically update your code in the browser. No need to refresh the page
-              manually. And mako has integrated React Fast Refresh, when you change a React component, it will only
-              update the component, not the whole page.</p>
+            <h2>热模块替换</h2>
+            <p>当文件更改时，Mako 将自动更新浏览器中的代码。无需手动刷新页面。Mako 已集成 React 快速刷新，当你更改 React 组件时，它只会更新组件，而不是整个页面。</p>
           </div>
           <div class="box">
             <p style="font-size:2rem;">🗃</p>
-            <h2>Code Splitting</h2>
-            <p>Mako has built-in support for code splitting. You can use dynamic imports to split your code into
-              separate bundles. Resulting in smaller initial bundle sizes and faster load times. Mako has a
-              codeSplitting config that you can use to customize the behavior of code splitting.</p>
+            <h2>代码拆分</h2>
+            <p>Mako 内置代码拆分支持。你可以使用动态导入将代码拆分为单独的包，从而减小初始包大小并加快加载时间。Mako 具有可配置的 codeSplitting 选项，你可以用来自定义代码拆分行为。</p>
           </div>
           <div class="box">
             <p style="font-size:2rem;">🗞</p>
             <h2>Module Concatenation</h2>
-            <p>Module Concatenation is an optimization feature designed to reduce both bundle size and runtime overhead.
-              Mako has an equivalent implementation found in Webpack's optimization documentation.</p>
+            <p>Module Concatenation 是一种优化功能，旨在减少包大小和运行时开销。Mako 实现了与 Webpack 优化文档中的实现相当的 Module Concatenation。</p>
           </div>
         </div>
       </section>
       <section class="highlights">
-        <h1>Benchmark</h1>
-        <p class="description">Mako is designed to be blazing fast.</p>
+        <h1>基准测试</h1>
+        <p class="description">Mako 被设计得快如闪电。</p>
         <div class="tabs">
           <div class="tab-nav">
-            <button class="tab-btn active" data-tab="tab1">Code Start</button>
-            <button class="tab-btn" data-tab="tab2">Root HMR</button>
-            <button class="tab-btn" data-tab="tab3">Leaf HMR</button>
-            <button class="tab-btn" data-tab="tab4">Code Build</button>
+            <button class="tab-btn active" data-tab="tab1">冷启动</button>
+            <button class="tab-btn" data-tab="tab2">根 HMR</button>
+            <button class="tab-btn" data-tab="tab3">叶 HMR</button>
+            <button class="tab-btn" data-tab="tab4">冷构建</button>
           </div>
           <div class="benchmark-container">
             <div id="tab1" class="tab-pane active">
@@ -863,7 +852,7 @@
                 <p class="benchmark-title">Webpack</p>
                 <div class="benchmark-w">
                   <div class="benchmark-bar">
-                    <div class="benchmark-bar-current no-mako"></div>
+                    <div class="benchmark-bar no-mako"></div>
                   </div>
                 </div>
                 <div class="benchmark-time" data-time="5.430"></div>
@@ -872,11 +861,11 @@
           </div>
         </div>
         <p class="benchmark">
-          <a href="https://github.com/umijs/benchmark">View benchmark</a>
+          <a href="https://github.com/umijs/benchmark">查看基准测试</a>
         </p>
       </section>
       <section class="highlights">
-        <h1>Who is using</h1>
+        <h1>谁在使用</h1>
         <div class="user-container">
           <div class="user">
             <img src="https://gw.alipayobjects.com/mdn/rms_27e257/afts/img/A*70AsSL23VKYAAAAAAAAAAAAAARQnAQ" width="150"
@@ -892,6 +881,7 @@
               width="48" alt="UmiJS">
             <p class="user-name">UmiJS</p>
           </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -903,19 +893,19 @@
         </div>
         <div class="right">
           <div class="sitemap-col">
-            <h4 class="">Resources</h4>
+            <h4>资源</h4>
             <ul>
               <li>
-                <a href="/docs">Docs</a>
+                <a href="/docs">文档</a>
               </li>
               <li>
                 <a href="https://github.com/umijs/mako">Github</a>
               </li>
               <li>
-                <a href="/docs/contact">Contact</a>
+                <a href="/docs/contact">联系我们</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <a href="/blog">博客</a>
                 <a href="/rss.xml">
                   <svg class="rss" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     aria-hidden="true" data-slot="icon">
@@ -928,7 +918,7 @@
             </ul>
           </div>
           <div class="sitemap-col">
-            <h4 class="">Ecosystem</h4>
+            <h4>生态系统</h4>
             <ul>
               <li>
                 <a href="https://umijs.org">Umi</a>
@@ -939,19 +929,19 @@
             </ul>
           </div>
           <div class="sitemap-col">
-            <h4 class="">Project</h4>
+            <h4>项目</h4>
             <ul>
               <li>
-                <a href="https://github.com/umijs/mako/blob/master/CHANGELOG.md">Changelog</a>
+                <a href="https://github.com/umijs/mako/blob/master/CHANGELOG.md">更新日志</a>
               </li>
               <li>
-                <a href="/docs/faq">FAQ</a>
+                <a href="/docs/faq">常见问题</a>
               </li>
               <li>
-                <a href="/docs/contributing">Contributing</a>
+                <a href="/docs/contributing">贡献指南</a>
               </li>
               <li>
-                <a href="https://github.com/umijs/mako/blob/master/LICENSE">License</a>
+                <a href="https://github.com/umijs/mako/blob/master/LICENSE">LICENSE</a>
               </li>
             </ul>
           </div>
