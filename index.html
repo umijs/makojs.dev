@@ -126,6 +126,116 @@
       vertical-align: bottom;
     }
 
+    .footer {
+      background: #24202e;
+      border-top: 1px solid #2c2735;
+      padding: 60px 0 40px;
+      opacity: 0.7;
+    }
+
+    .footer .top {
+      display: flex;
+      padding-left: 100px;
+      padding-right: 225px;
+    }
+
+    .footer .top .left {
+      display: flex;
+    }
+
+    .footer .top .left img {
+      height: 32px;
+    }
+
+    .footer .top .left sup {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 14px;
+      line-height: 32px;
+    }
+
+    .footer .top .right {
+      margin-left: 25%;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .footer .top .right .sitemap-col h4 {
+      font-size: 24px;
+      color: #ffffff3f;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .footer .top .right .sitemap-col ul>li {
+      margin-bottom: 24px;
+    }
+
+    .footer .top .right .sitemap-col ul>li a {
+      color: #fbfbfb;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .footer .top .right .sitemap-col .rss {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+
+    .footer .copyright {
+      width: 100%;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.65);
+      display: inline-block;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .container .tip {
+        font-size: 14px;
+      }
+
+      .container .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        margin: 0 20px;
+      }
+
+      .container .navbar .left,
+      .container .navbar .right {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .container .navbar .right .language {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer .top {
+        padding: 0 20px;
+      }
+
+      .footer .top .left {
+        display: none;
+      }
+
+      .footer .top .right {
+        margin-left: 0;
+        justify-content: space-around;
+      }
+
+      .footer .right .sitemap-col:last-child {
+        display: none;
+      }
+    }
+  </style>
+  <style>
     .hero {
       padding: 100px 0 128px;
       text-align: center;
@@ -377,97 +487,7 @@
       text-align: left;
     }
 
-    .footer {
-      background: #24202e;
-      border-top: 1px solid #2c2735;
-      padding: 60px 0 40px;
-      opacity: 0.7;
-    }
-
-    .footer .top {
-      display: flex;
-      padding-left: 100px;
-      padding-right: 225px;
-    }
-
-    .footer .top .left {
-      display: flex;
-    }
-
-    .footer .top .left img {
-      height: 32px;
-    }
-
-    .footer .top .left sup {
-      color: #fff;
-      font-size: 18px;
-      font-weight: 500;
-      margin-left: 14px;
-      line-height: 32px;
-    }
-
-    .footer .top .right {
-      margin-left: 25%;
-      display: flex;
-      flex: 1;
-      justify-content: space-between;
-    }
-
-    .footer .top .right .sitemap-col h4 {
-      font-size: 24px;
-      color: #ffffff3f;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    .footer .top .right .sitemap-col ul>li {
-      margin-bottom: 24px;
-    }
-
-    .footer .top .right .sitemap-col ul>li a {
-      color: #fbfbfb;
-      font-size: 18px;
-      text-decoration: none;
-    }
-
-    .footer .top .right .sitemap-col .rss {
-      width: 22px;
-      height: 22px;
-      vertical-align: middle;
-    }
-
-    .footer .copyright {
-      width: 100%;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.65);
-      display: inline-block;
-      margin-top: 48px;
-      text-align: center;
-    }
-
     @media (max-width: 768px) {
-      .container .tip {
-        font-size: 14px;
-      }
-
-      .container .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        margin: 0 20px;
-      }
-
-      .container .navbar .left,
-      .container .navbar .right {
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      .container .navbar .right .language {
-        display: flex;
-        align-items: center;
-      }
-
       .hero .tagline {
         font-size: 32px;
       }
@@ -539,23 +559,6 @@
 
       .user-container .user {
         margin-right: 5px;
-      }
-
-      .footer .top {
-        padding: 0 20px;
-      }
-
-      .footer .top .left {
-        display: none;
-      }
-
-      .footer .top .right {
-        margin-left: 0;
-        justify-content: space-around;
-      }
-
-      .footer .right .sitemap-col:last-child {
-        display: none;
       }
     }
   </style>
