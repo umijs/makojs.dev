@@ -105,16 +105,16 @@ $ npx mako -h
 
 Mako vX.X.X
 
-用法：mako <command> [options]
+Usage: mako <command> [options]
 
-命令：
+Commands:
   build
 
-选项：
+Options:
   --help,-h
   --version,-v
 
-示例：
+Examples:
   mako build
   mako -v
 ```
