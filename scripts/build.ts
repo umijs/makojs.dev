@@ -52,12 +52,12 @@ export async function build() {
   }
 
   // Copy index.html
-  fs.copyFileSync(path.join(cwd, 'index.html'), path.join(cwd, 'dist/index-preview.html'));
+  fs.copyFileSync(path.join(cwd, 'index.html'), path.join(cwd, 'dist/index.html'));
   fs.mkdirSync(path.join(cwd, 'dist/zh-CN'), { recursive: true });
   fs.copyFileSync(path.join(cwd, 'index_zh-CN.html'), path.join(cwd, 'dist/zh-CN/index.html'));
 
   // generate rss feed
-  // await new Collection({ dirPath: path.join(docsDir, 'blog') }).generateRssFeed();
+  await new Collection({ dirPath: path.join(docsDir, 'blog') }).generateRssFeed();
 
   console.log('Building done!');
 }
