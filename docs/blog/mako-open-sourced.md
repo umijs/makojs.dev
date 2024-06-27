@@ -93,7 +93,7 @@ If you're a Umi user, it's very simple to experience Mako!
 # Make sure your version is 4.2.0 or above
 $ npx umi -v
 4.2.0
-# Enable mako configuration
+# Enable Mako configuration
 $ npx umi config set mako {}
 # Run build or other commands
 $ npx umi build

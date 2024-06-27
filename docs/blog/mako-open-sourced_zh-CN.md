@@ -92,7 +92,7 @@ $ npm create mako
 # 确认版本是 4.2.0 或以上
 $ npx umi -v
 4.2.0
-# 开启 mako 配置
+# 开启 Mako 配置
 $ npx umi config set mako {}
 # 执行构建或其他命令
 $ npx umi build

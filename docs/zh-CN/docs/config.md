@@ -19,7 +19,7 @@ translated_at: '2024-06-26T13:24:18.282Z'
 }
 ```
 
-注意：当你在使用 mako 与 Umi 时，建议在 `.umirc.ts` 或 `config/config.ts` 文件中配置打包工具。
+注意：当你在使用 Mako 与 Umi 时，建议在 `.umirc.ts` 或 `config/config.ts` 文件中配置打包工具。
 
 ## 配置项
 
