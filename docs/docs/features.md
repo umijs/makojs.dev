@@ -57,7 +57,7 @@ And there're something you might want to know:
 
 Less is supported out of the box. Mako will automatically compile your Less files to CSS.
 
-Since less is used heavily in Ant Financial, Mako has been optimized for this. We use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile less files in parallel, which can speed up the compilation process. So, it's faster than other rust bundle tools in this case by default. Checkout [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader) for more details.
+Since less is used heavily in Ant Group, Mako has been optimized for this. We use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile less files in parallel, which can speed up the compilation process. So, it's faster than other rust bundle tools in this case by default. Checkout [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader) for more details.
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
 
