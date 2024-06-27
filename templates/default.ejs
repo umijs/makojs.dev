@@ -238,9 +238,17 @@
     </style>
     <style>
       main {
-        padding: 0 3rem;
+        padding: 0 48px;
         display: flex;
       }
+
+      @media (max-width: 768px) {
+        main {
+          margin: 0 20px;
+          padding: 0 20px;
+        }
+      }
+
       .open .shadow {
         background: rgba(0, 0, 0, 0.5);
         visibility: visible;
@@ -310,11 +318,19 @@
       article {
         max-width: 760px;
         min-height: 600px;
-        margin: 0 58px;
         line-height: 1.6;
+        padding: 0 68px;
         color: #ffffffcc;
         font-size: 1em;
       }
+
+      @media (max-width: 768px) {
+        article {
+          padding: 0;
+          max-width: 100%;
+        }
+      }
+
       article h1,
       article h2,
       article h3,
@@ -419,7 +435,7 @@
       .menubar a {
         display: inline-block;
       }
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         .menubar {
           display: none;
         }
@@ -436,6 +452,15 @@
       <p class="tip"><a href="/blog/mako-open-sourced">Mako is open sourced! Check out the release article →</a></p>
 
       <div class="navbar">
+        <div class="menubar">
+          <a href="javascript:;" onClick="document.querySelector('main').className = 'open';">
+            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" fill="#a8b2ff">
+              <rect x="15" y="18" width="20" height="2" stroke-width="0"></rect>
+              <rect x="15" y="24" width="20" height="2" stroke-width="0"></rect>
+              <rect x="15" y="30" width="20" height="2" stroke-width="0"></rect>
+            </svg>
+          </a>
+        </div>
         <div class="left">
           <img
             src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png"
@@ -460,16 +485,6 @@
             />
           </a>
         </nav>
-      </div>
-
-      <div class="menubar">
-        <a href="javascript:;" onClick="document.querySelector('main').className = 'open';">
-          <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" fill="#a8b2ff">
-            <rect x="15" y="18" width="20" height="2" stroke-width="0"></rect>
-            <rect x="15" y="24" width="20" height="2" stroke-width="0"></rect>
-            <rect x="15" y="30" width="20" height="2" stroke-width="0"></rect>
-          </svg>
-        </a>
       </div>
 
       <main>
