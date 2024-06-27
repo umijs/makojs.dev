@@ -28,7 +28,7 @@ Known incompatibilities:
 
 ## html-webpack-plugin compatibility
 
-Mako don't support html-webpack-plugin, and does't handle html files. If you want to emit html files, you should do it manually. Add [`stats`](./config#stats) config to `mako.config.js`, then you can get information about the build, and you can write your own html files.
+Mako don't support html-webpack-plugin, and does't handle html files. If you want to emit html files, you should do it manually. Add [`stats`](./config#stats) config to `mako.config.json`, then you can get information about the build, and you can write your own html files.
 
 ```js
 {

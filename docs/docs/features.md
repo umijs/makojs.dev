@@ -28,11 +28,11 @@ Check out [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [benchmark 
 
 When files change, Mako will automatically update your code in the browser. No need to refresh the page manually.
 
-And mako has integrated React Fast Refresh, when you change a React component, it will only update the component, not the whole page.
+And Mako has integrated React Fast Refresh, when you change a React component, it will only update the component, not the whole page.
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1718937230/blog/o0dt1fuf.gif)
 
-HMR in full ant-design-pro project: webpack(above) vs mako(below).
+HMR in full ant-design-pro project: Webpack(above) vs Mako(below).
 
 ## Diagnostics
 
@@ -118,7 +118,7 @@ Examples:
   mako -v
 ```
 
-If you want to use mako in development, you can add the `--watch` parameter to the build command. Check `npx mako build -h` for more details.
+If you want to use Mako in development, you can add the `--watch` parameter to the build command. Check `npx mako build -h` for more details.
 
 ```bash
 $ npx mako build --watch

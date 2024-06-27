@@ -5,7 +5,7 @@ translated_at: '2024-06-26T13:22:23.767Z'
 
 # 开始上手
 
-## 安装 mako
+## 安装 Mako
 
 通过 npm 或 pnpm 安装 Mako。
 
@@ -46,13 +46,13 @@ $ node dist/index.js
 Hello Mako!
 ```
 
-## 与 react 打包
+## 与 React 打包
 
 > 或者，你可以查看 CodeSandbox 示例。
 > 
 > [![Edit mako](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/devbox/mako-jzhkjh?embed=1&file=%2Fsrc%2FApp.tsx)
 
-用以下命令创建一个新的 mako 项目。
+用以下命令创建一个新的 Mako 项目。
 
 ```bash
 $ npm create mako
@@ -81,9 +81,9 @@ dist/index.js       144.68 kB │ map: 354.22 kB
 Complete!
 ```
 
-## 与 umi 打包
+## 与 Umi 打包
 
-最新的 umi 默认支持 Mako。你可以通过在配置文件中设置 `mako` 字段，在 umi 项目中启用 mako。
+最新的 Umi 默认支持 Mako。你可以通过在配置文件中设置 `mako` 字段，在 Umi 项目中启用 Mako。
 
 首先，确保你安装了 umi@4.2.0 或更高版本。
 
@@ -106,7 +106,7 @@ export default {
 };
 ```
 
-现在你可以用 Mako 运行 umi 项目了。
+现在你可以用 Mako 运行 Umi 项目了。
 
 ```bash
 $ umi build

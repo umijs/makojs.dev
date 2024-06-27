@@ -29,21 +29,21 @@ await build({
 
 #### root
 
-- Type: `String`
+- Type: `string`
 - Default: `process.cwd()`
 
 The root directory of the project.
 
 #### config
 
-- Type: `Object`
+- Type: `object`
 - Default: `{}`
 
 Checkout [config](./config) for more details.
 
 #### watch
 
-- Type: `Boolean`
+- Type: `boolean`
 - Default: `false`
 
 When enabled, Mako will watch for file changes and recompile automatically.

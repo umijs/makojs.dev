@@ -4,7 +4,7 @@ title: Mako - Getting Started
 
 # Getting Started
 
-## Install mako
+## Install Mako
 
 Install Mako via npm or pnpm.
 
@@ -45,13 +45,13 @@ $ node dist/index.js
 Hello Mako!
 ```
 
-## Bundle with react
+## Bundle with React
 
 > Or, you can checkout the codesandbox example.
 > 
-> [![Edit mako](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/devbox/mako-jzhkjh?embed=1&file=%2Fsrc%2FApp.tsx)
+> [![Edit Mako](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/devbox/mako-jzhkjh?embed=1&file=%2Fsrc%2FApp.tsx)
 
-Create a new mako project with the following command.
+Create a new Mako project with the following command.
 
 ```bash
 $ npm create mako
@@ -80,9 +80,9 @@ dist/index.js       144.68 kB │ map: 354.22 kB
 Complete!
 ```
 
-## Bundle with umi
+## Bundle with Umi
 
-The latest umi supports Mako out of the box. You can enable mako in umi project by setting the `mako` field in the config file.
+The latest Umi supports Mako out of the box. You can enable Mako in Umi project by setting the `mako` field in the config file.
 
 First, make sure you have umi@4.2.0 or above installed.
 

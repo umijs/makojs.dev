@@ -33,7 +33,7 @@ Mako 设计之初就是为了速度。我们使用 Rust 来处理核心打包逻
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1718937230/blog/o0dt1fuf.gif)
 
-在完整的 ant-design-pro 项目中的 HMR：webpack（上）vs mako（下）。
+在完整的 ant-design-pro 项目中的 HMR：Webpack（上）vs Mako（下）。
 
 ## 诊断
 
@@ -58,7 +58,7 @@ TypeScript 支持开箱即用。Mako 会自动将你的 TypeScript 文件编译�
 
 Less 支持开箱即用。Mako 会自动将你的 Less 文件编译为 CSS。
 
-由于 Ant Financial 大量使用 Less，Mako 在此方面进行了优化。我们在 Node.js 中使用 [piscina](https://www.npmjs.com/package/piscina) 的 workers 并行编译 less 文件，这可以加速编译过程。因此，默认情况下，它比其他 rust 打包工具在这个方面更快。更多详情请查看 [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader)。
+由于蚂蚁金服大量使用 Less，Mako 在此方面进行了优化。我们在 Node.js 中使用 [piscina](https://www.npmjs.com/package/piscina) 的 workers 并行编译 less 文件，这可以加速编译过程。因此，默认情况下，它比其他 rust 打包工具在这个方面更快。更多详情请查看 [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader)。
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
 
@@ -119,7 +119,7 @@ Examples:
   mako -v
 ```
 
-如果你想在开发中使用 mako，可以在 build 命令中添加 `--watch` 参数。查看 `npx mako build -h` 获取更多详情。
+如果你想在开发中使用 Mako，可以在 build 命令中添加 `--watch` 参数。查看 `npx mako build -h` 获取更多详情。
 
 ```bash
 $ npx mako build --watch
