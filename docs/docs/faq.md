@@ -4,7 +4,7 @@ title: Mako - FAQ
 
 # FAQ
 
-Below are some frequently asked questions about Mako. You can also ask questions on the [Github or Group](/docs/faq#how-to-ask-questions%3F).
+Below are some frequently asked questions about Mako. You can also ask questions on the [Github or Group](./feedback).
 
 ## Should I Use Mako?
 
@@ -28,7 +28,7 @@ Known incompatibilities:
 
 ## html-webpack-plugin compatibility
 
-Mako don't support html-webpack-plugin, and does't handle html files. If you want to emit html files, you should do it manually. Add [`stats`](/docs/config#stats) config to `mako.config.js`, then you can get information about the build, and you can write your own html files.
+Mako don't support html-webpack-plugin, and does't handle html files. If you want to emit html files, you should do it manually. Add [`stats`](./config#stats) config to `mako.config.js`, then you can get information about the build, and you can write your own html files.
 
 ```js
 {
