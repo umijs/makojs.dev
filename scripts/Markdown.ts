@@ -32,7 +32,7 @@ export class Markdown {
     });
     md.use(await Shikiji({
       // themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: 'github-dark',
+      theme: 'github-light',
     }));
     md.use(anchor, {
       permalink: anchor.permalink.linkInsideHeader({
