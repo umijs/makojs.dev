@@ -29,7 +29,7 @@ Mako 不旨在与 Webpack 的社区加载器和插件兼容。它旨在成为一
 
 ## html-webpack-plugin 兼容性
 
-Mako 不支持 html-webpack-plugin，并且不处理 html 文件。如果你想生成 html 文件，你应该手动操作。在 `mako.config.js` 中添加 [`stats`](./config#stats) 配置，然后你可以获取构建的信息，并可以编写你自己的 html 文件。
+Mako 不支持 html-webpack-plugin，并且不处理 html 文件。如果你想生成 html 文件，你应该手动操作。在 `mako.config.json` 中添加 [`stats`](./config#stats) 配置，然后你可以获取构建的信息，并可以编写你自己的 html 文件。
 
 ```js
 {
