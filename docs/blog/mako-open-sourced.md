@@ -15,7 +15,7 @@ _2024-06-28 by [sorrycc](https://github.com/sorrycc)_
 
 <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" width="120" height="120" />
 
-Hi, I am sorrycc, one of the main maintainers of Mako, and also the creator of Umi, Dva, Father, and other libraries. I am thrilled to announce that Mako is finally open source, and I’m excited to formally introduce it to you today.
+Hi, I am sorrycc, one of the main maintainers of Mako, and also the creator of Umi, Dva, Father, and other libraries. I am thrilled to announce that Mako is finally open source, the Github url is https://github.com/umijs/mako/ , and I’m excited to formally introduce it to you today.
 
 ## What is Mako?
 

@@ -14,7 +14,7 @@ English Version: [Mako is Now Open Source](./mako-open-sourced).
 
 <img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" width="120" height="120" />
 
-Hi，我是 sorrycc，Mako 的主要负责人之一，也是 Umi、Dva、Father 等库的作者。很开心，Mako 终于开源了，今天和大家正式介绍下他。
+Hi，我是 sorrycc，Mako 的主要负责人之一，也是 Umi、Dva、Father 等库的作者。很开心，Mako 终于开源了，Github 地址是 https://github.com/umijs/mako/ ，今天和大家正式介绍下他。
 
 ## Mako 是什么？
 
