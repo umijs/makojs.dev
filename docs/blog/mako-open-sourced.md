@@ -13,11 +13,13 @@ _2024-06-28 by [sorrycc](https://github.com/sorrycc)_
 
 中文版: [《Mako 开源了》](./mako-open-sourced_zh-CN)。
 
-<img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" width="120" height="120" />
+![](https://img.alicdn.com/imgextra/i4/O1CN01CK3ElF1kFaFzFBUiA_!!6000000004654-0-tps-1200-662.jpg)
 
 Hi, I am sorrycc, one of the main maintainers of Mako, and also the creator of Umi, Dva, Father, and other libraries. I am thrilled to announce that Mako is finally open source, the Github url is https://github.com/umijs/mako/ , and I’m excited to formally introduce it to you today.
 
 ## What is Mako?
+
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01dvFN0j1e2rYBJpJGJ_!!6000000003814-2-tps-2048-2048.png_240x240.jpg" width="120" height="120" />
 
 Mako is an "extremely fast" and "production-grade" front-end build tool, based on Rust.
 
