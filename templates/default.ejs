@@ -316,16 +316,18 @@
         display: inline-block;
       }
       article {
+        position: relative;
+        left: 296px;
         max-width: 760px;
         min-height: 600px;
         line-height: 1.6;
-        padding: 0 68px;
         color: #ffffffcc;
         font-size: 1em;
       }
 
       @media (max-width: 768px) {
         article {
+          left: 0;
           padding: 0;
           max-width: 100%;
         }
@@ -440,6 +442,8 @@
           display: none;
         }
         aside {
+          width: 200px;
+          position: fixed;
           display: block;
           transform: translate(0);
         }
