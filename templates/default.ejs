@@ -80,10 +80,9 @@
         align-items: center;
         justify-content: space-between;
         height: 49px;
-        margin: 0 48px;
-        padding: 0 42px 0 14px;
-        border: 1px solid rgba(151, 151, 151, 0.28);
-        border-radius: 8px;
+        padding: 0 48px;
+        border-top: 1px solid rgba(151, 151, 151, 0.28);
+        border-bottom: 1px solid rgba(151, 151, 151, 0.28);
       }
 
       .container .navbar .left .title {
@@ -239,7 +238,7 @@
     </style>
     <style>
       main {
-        margin: 48px 320px;
+        padding: 0 3rem;
         display: flex;
       }
       .open .shadow {
@@ -271,7 +270,8 @@
       }
       aside {
         display: none;
-        max-width: 200px;
+        max-width: 300px;
+        padding-right: 48px;
         transition: transform 0.25s;
         transform: translate(-220px);
         box-shadow: none;
@@ -294,6 +294,7 @@
       }
       nav ul ul {
         padding-left: 10px;
+        border-left: 1px solid #493c56;
       }
       nav ul ul > li {
         font-weight: normal;
@@ -309,10 +310,19 @@
       article {
         max-width: 760px;
         min-height: 600px;
-        margin: 0 0 0 48px;
+        margin: 0 58px;
         line-height: 1.6;
         color: #ffffffcc;
         font-size: 1em;
+      }
+      article h1,
+      article h2,
+      article h3,
+      article h4,
+      article h5,
+      article h6 {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
       }
       article h1 a,
       article h2 a,
@@ -550,9 +560,7 @@
             </div>
           </nav>
         </aside>
-        <article>
-          <%- content %>
-        </article>
+        <article><%- content %></article>
       </main>
 
       <footer class="footer">
