@@ -39,7 +39,8 @@ export async function build() {
     };
     let htmlContent = await Markdown.parseMarkdown(body);
     fs.ensureDirSync(path.dirname(htmlPath));
-    let templatePath = path.join(cwd, 'templates/default.ejs');
+    let isZhCN = mdPath.includes('/zh-CN/') || mdPath.endsWith('_zh-CN.md');
+    let templatePath = path.join(cwd, isZhCN ? 'templates/default_zh-CN.ejs' : 'templates/default.ejs');
     let template = fs.readFileSync(templatePath, 'utf-8');
     let htmlContent2 = ejs.render(template, {
       content: htmlContent,

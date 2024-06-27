@@ -5,7 +5,7 @@ translated_at: '2024-06-26T13:23:11.573Z'
 
 # 特性
 
-## 零配置
+## 开箱即用
 
 只需开始一个 JS/TS 文件，Mako 将处理剩下的一切。TypeScript、Less、CSS、CSS 模块、React、图片、字体、WASM、Node Polyfill 等都支持开箱即用。无需配置加载器、插件或其他任何东西。
 
@@ -17,15 +17,15 @@ Mako 是可靠的。它在蚂蚁集团的数百个项目中得到了应用，如
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1719198069/blog/neqp18f8.png)
 
-## 极速
+## 极快
 
-Mako 设计之初就是为了极速。我们使用 Rust 来处理核心打包逻辑，并使用 Node.js 中的 [piscina](https://www.npmjs.com/package/piscina) 来并行编译文件。我们花了很多时间优化 Mako 的性能。而且，Mako 在基准测试用例中比其他 Rust 打包器和 Webpack 更快。
+Mako 设计之初就是为了速度。我们使用 Rust 来处理核心打包逻辑，并使用 Node.js 中的 [piscina](https://www.npmjs.com/package/piscina) 来并行编译文件。我们花了很多时间优化 Mako 的性能。而且，Mako 在基准测试用例中比其他 Rust 打包器和 Webpack 更快。
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
 
 查看 [《聊下 Mako 的 Benchmark》](/blog/benchmark) 和 [基准测试仓库](https://github.com/umijs/benchmark) 了解更多详情。
 
-## 热模块替换
+## 模块热替换
 
 当文件发生变化时，Mako 将自动在浏览器中更新你的代码。无需手动刷新页面。
 
@@ -168,7 +168,7 @@ await build({
 }
 ```
 
-## 代码拆分
+## Code Splitting
 
 Mako 内置了对代码拆分的支持。你可以使用动态导入来将代码拆分成不同的包。这样可以减小初始包的大小并加快加载时间。
 
@@ -190,7 +190,7 @@ Mako 有一个 [`codeSplitting`](./config#codesplitting) 配置，你可以用�
 
 - 有些情况下你可能想在构建后只保留一个 js 文件和一个 css 文件，你可以使用 [`dynamicImportToRequire`](./config#dynamicimporttorequire) 配置将动态导入转换为 require。
 
-## 树摇
+## Tree Shaking
 
 树摇是一种通过分析 JavaScript 模块之间的导入/导出关系来消除死代码的技术。在 Mako 中，树摇功能在生产构建中默认启用，在观察模式下禁用。更多信息关于树摇，参考我们的[博客](/blog/mako-tree-shaking)。
 
@@ -198,14 +198,14 @@ Mako 有一个 [`codeSplitting`](./config#codesplitting) 配置，你可以用�
 
 ![skipModules-demo](https://mdn.alipayobjects.com/huamei_42epzw/afts/img/A*r0UkT5JzuGQAAAAAAAAAAAAADiSRAQ/original)
 
-## 模块合并
+## Module Concatenation
 
-[模块合并](./config#optimization) 是一项旨在减少包大小和运行时开销的优化功能。它等同于 [Webpack 优化文档](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules) 中的实现。
+[Module Concatenation](./config#optimization) 是一项旨在减少包大小和运行时开销的优化功能。它等同于 [Webpack 优化文档](https://webpack.js.org/configuration/optimization/#optimizationconcatenatemodules) 中的实现。
 
 该功能识别出一组模块，这些模块仅依赖于同组中的模块，并将每个组合并成一个模块。
 
 
-## 目标
+## Targets
 
 Mako 有一个 [`targets`](./config#targets) 配置，您可以用它来指定您想要支持的浏览器。Mako 将自动编译您的代码以兼容指定的浏览器，包括注入 ~~polyfills~~（尚未实现）、助手等。
 
