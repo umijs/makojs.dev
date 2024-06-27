@@ -239,7 +239,7 @@
     </style>
     <style>
       main {
-        margin: 48px;
+        margin: 48px 320px;
         display: flex;
       }
       .open .shadow {
@@ -271,6 +271,7 @@
       }
       aside {
         display: none;
+        max-width: 200px;
         transition: transform 0.25s;
         transform: translate(-220px);
         box-shadow: none;
@@ -306,7 +307,7 @@
         display: inline-block;
       }
       article {
-        max-width: calc(100% - 256px);
+        max-width: 760px;
         min-height: 600px;
         margin: 0 0 0 48px;
         line-height: 1.6;
@@ -393,12 +394,6 @@
         border: none;
         border-top: 1px solid #493c56;
         margin: 1em 0;
-      }
-      div.copyright {
-        border-top: 1px solid #493c56;
-        margin-top: 2em;
-        padding-top: 1em;
-        text-align: center;
       }
       .menubar {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -557,7 +552,6 @@
         </aside>
         <article>
           <%- content %>
-          <div class="copyright">Copyright © 2024-present</div>
         </article>
       </main>
 
