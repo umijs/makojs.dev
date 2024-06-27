@@ -321,7 +321,6 @@
     }
 
     .highlights h1 {
-      /* font-feature-settings: kern; */
       font-size: 48px;
       color: #929ef4;
       filter: drop-shadow(2px 2px 0 rgba(146, 158, 244, 0.25));
@@ -377,7 +376,8 @@
 
     .tab-btn {
       padding: 10px;
-      border: none;
+      border: 2px solid transparent;
+      border-bottom: none;
       cursor: pointer;
       margin-right: 32px;
       font-size: 22px;
@@ -385,6 +385,7 @@
       background-color: inherit;
       position: relative;
       z-index: 1;
+      box-sizing: border-box;
     }
 
     .tab-btn.active {
@@ -394,6 +395,7 @@
       border-top-left-radius: 8px;
       border: 2px solid #493c56;
       border-bottom: none;
+      box-sizing: border-box;
     }
 
     .tab-pane {
@@ -543,7 +545,7 @@
       }
 
       .benchmark-title {
-        width: 60px;
+        width: 90px;
       }
 
       .benchmark-title,

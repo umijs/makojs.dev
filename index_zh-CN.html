@@ -377,7 +377,8 @@
 
     .tab-btn {
       padding: 10px;
-      border: none;
+      border: 2px solid transparent;
+      border-bottom: none;
       cursor: pointer;
       margin-right: 32px;
       font-size: 22px;
@@ -385,6 +386,7 @@
       background-color: inherit;
       position: relative;
       z-index: 1;
+      box-sizing: border-box;
     }
 
     .tab-btn.active {
@@ -394,6 +396,7 @@
       border-top-left-radius: 8px;
       border: 2px solid #493c56;
       border-bottom: none;
+      box-sizing: border-box;
     }
 
     .tab-pane {
@@ -543,7 +546,7 @@
       }
 
       .benchmark-title {
-        width: 60px;
+        width: 90px;
       }
 
       .benchmark-title,
@@ -852,10 +855,10 @@
                 <p class="benchmark-title">Webpack</p>
                 <div class="benchmark-w">
                   <div class="benchmark-bar">
-                    <div class="benchmark-bar no-mako"></div>
+                    <div class="benchmark-bar-current no-mako"></div>
                   </div>
                 </div>
-                <div class="benchmark-time" data-time="5.430"></div>
+                <div class="benchmark-time" data-time="5.43"></div>
               </div>
             </div>
           </div>
