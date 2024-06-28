@@ -138,3 +138,5 @@ Mako 的发布离不开每一位贡献者，尤其大部分同学还是虚线业
 - [farm](https://github.com/farm-fe/farm) by [@brightwu](https://github.com/wre232114), which inspired the tree shaking, plugin system and others of Mako.
 - [rspack](https://github.com/web-infra-dev/rspack), which inspired the tree shaking of Mako.
 - [oxc-resolver](https://github.com/oxc-project/oxc-resolver) by [@Boshen](https://github.com/Boshen) which powered the resolver of Mako.
+- [Oxc](https://github.com/oxc-project/oxc/) by [@Boshen](https://github.com/Boshen) from which We learned a lot about how to develop efficiently with Rust.
+- [biome](https://github.com/biomejs/biome) by [@ematipico](https://github.com/ematipico) from which We learned a lot about how to develop efficiently with Rust.
