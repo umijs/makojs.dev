@@ -412,8 +412,7 @@ import("./a.js");
 - `meta`，是否生成 `meta.json` 文件（仅适用于 Bundless）
 - `chunkLoadingGlobal`，`chunk loading` 的全局变量名称
 - `preserveModules`，是否保留模块目录结构（仅适用于 Bundless）
-
-- `preserveModulesRoot`，保畋模块目录结构的根目录（仅限 Bundless）
+- `preserveModulesRoot`，是否保留模块目录结构的根目录（仅限 Bundless）
 
 ### optimization
 
