@@ -72,15 +72,19 @@
       padding-top: 20px;
     }
 
+    .container .tip:hover {
+      text-decoration: underline;
+    }
+
     .container .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 49px;
+      height: 52px;
       margin: 20px 48px 0;
-      padding: 0 42px 0 14px;
+      padding: 0 42px 0 10px;
       border: 1px solid rgba(151, 151, 151, 0.28);
-      border-radius: 8px;
+      border-radius: 14px;
     }
 
     .container .navbar .left .title {
@@ -101,6 +105,10 @@
       font-size: 18px;
       margin-right: 2rem;
       text-decoration: none;
+    }
+
+    .container .navbar .right a:hover {
+      color: #fff;
     }
 
     .container .navbar .right a:last-child {
@@ -173,12 +181,12 @@
     }
 
     .footer .top .right .sitemap-col ul>li {
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
 
     .footer .top .right .sitemap-col ul>li a {
       color: #fbfbfb;
-      font-size: 18px;
+      font-size: 16px;
       text-decoration: none;
     }
 
@@ -260,9 +268,9 @@
 
     .description {
       max-width: 994px;
-      line-height: 1.5;
-      color: #ffffffcc;
-      font-size: 24px;
+      line-height: 1.4;
+      color: #b0a9c4;
+      font-size: 20px;
       margin: 30px auto 40px;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -291,6 +299,11 @@
       justify-content: center;
       width: 182px;
       height: 53px;
+      transition: opacity 0.2s;
+    }
+
+    .actions .get-started:hover {
+      opacity: 0.7;
     }
 
     .actions .install-mako {
@@ -321,8 +334,12 @@
 
     .highlights h1 {
       font-size: 48px;
+      font-weight: bolder;
       color: #929ef4;
-      filter: drop-shadow(2px 2px 0 rgba(146, 158, 244, 0.25));
+    }
+
+    .highlights h1 + .description {
+      margin-top: 8px;
     }
 
     .highlights .box-container {
@@ -334,25 +351,50 @@
     }
 
     .highlights .box-container .box {
+      position: relative;
       background: #24202e;
       border: 1px solid #2c2735;
       border-radius: 8px;
-      padding: 46px 25px;
+      padding: 12px 25px;
       width: 388px;
-      height: 330px;
+      height: 350px;
       text-align: left;
+      transition: background 0.3s;
+    }
+
+    .highlights .box-container .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-image: radial-gradient(ellipse 100% 100% at 50% 50%, #553c62 0%, #2f1d45 47.02%, #24202e 100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .highlights .box-container .box > * {
+      position: relative;
     }
 
     .highlights .box-container .box h2 {
       font-size: 22px;
       color: #fff;
-      margin: 16px 0;
+      margin: 0 0 10px;
+      font-weight: 500;
+    }
+
+    .highlights .box-container .box p:first-child {
+      color: #fff;
+      font-size: 4rem;
     }
 
     .highlights .box-container .box p {
-      font-size: 14px;
-      color: #ffffffa6;
-      line-height: 1.5;
+      font-size: 16px;
+      color: #9691a2;
+      line-height: 1.4;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 8;
@@ -364,7 +406,11 @@
     }
 
     .highlights .box-container .box:hover {
-      background-image: radial-gradient(ellipse 100% 100% at 181px 200px, #553c62 0%, #2f1d45 47.02%, #24202e 100%);
+      background: transparent;
+    }
+
+    .highlights .box-container .box:hover::before {
+      opacity: 1;
     }
 
     .tabs .tab-nav {
@@ -374,17 +420,21 @@
     }
 
     .tab-btn {
-      padding: 10px;
+      padding: 10px 24px;
       border: 2px solid transparent;
       border-bottom: none;
       cursor: pointer;
       margin-right: 32px;
-      font-size: 22px;
+      font-size: 20px;
       color: #ffffff9a;
       background-color: inherit;
       position: relative;
       z-index: 1;
       box-sizing: border-box;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
     }
 
     .tab-btn.active {
@@ -423,10 +473,12 @@
     }
 
     .benchmark-title {
-      font-size: 24px;
+      font-size: 22px;
       color: #ffffffcc;
-      font-weight: 500;
+      font-weight: 300;
       width: 120px;
+      padding-right: 14px;
+      text-align: right;
     }
 
     .benchmark-w {
@@ -453,7 +505,7 @@
     .benchmark-time {
       margin-left: 15px;
       width: 50px;
-      font-family: Menlo-Regular;
+      font-family: Georgia;
       font-size: 20px;
       color: #ffffffcc;
       text-align: center;
@@ -628,14 +680,14 @@
         </p>
         <div class="box-container">
           <div class="box">
-            <p style="font-size:2rem;">🔮</p>
+            <p>🔮</p>
             <h2>Zero Config</h2>
             <p>Start with a JS/TS file, and Mako will handle the rest. TypeScript, Less, CSS, CSS Modules, React,
               Images, Fonts, WASM, Node Polyfill and more are supported out of the box. No need to configure loaders,
               plugins, or anything else.</p>
           </div>
           <div class="box">
-            <p style="font-size:2rem;">💡</p>
+            <p>💡</p>
             <h2>Production Grade</h2>
             <p>Mako is reliable. It’s used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program
               (Partly), Low Code,
@@ -644,28 +696,28 @@
               and it’s different versions to ensure the compatibility.</p>
           </div>
           <div class="box">
-            <p style="font-size:2rem;">🚀</p>
+            <p>🚀</p>
             <h2>Blazing Fast</h2>
             <p>Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in
               Node.js with piscina to compile files in parallel. We have spend lots of time optimizing the performance
               of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.</p>
           </div>
           <div class="box">
-            <p style="font-size:2rem;">📡</p>
+            <p>📡</p>
             <h2>Hot Module Replacement</h2>
             <p>When files change, Mako will automatically update your code in the browser. No need to refresh the page
               manually. And mako has integrated React Fast Refresh, when you change a React component, it will only
               update the component, not the whole page.</p>
           </div>
           <div class="box">
-            <p style="font-size:2rem;">🗃</p>
+            <p>🗃</p>
             <h2>Code Splitting</h2>
             <p>Mako has built-in support for code splitting. You can use dynamic imports to split your code into
               separate bundles. Resulting in smaller initial bundle sizes and faster load times. Mako has a
               codeSplitting config that you can use to customize the behavior of code splitting.</p>
           </div>
           <div class="box">
-            <p style="font-size:2rem;">🗞</p>
+            <p>🗞</p>
             <h2>Module Concatenation</h2>
             <p>Module Concatenation is an optimization feature designed to reduce both bundle size and runtime overhead.
               Mako has an equivalent implementation found in Webpack's optimization documentation.</p>
@@ -936,7 +988,7 @@
                 <a href="https://umijs.org">Umi</a>
               </li>
               <li>
-                <a href="https://d.umijs.org">Dumi</a>
+                <a href="https://d.umijs.org">dumi</a>
               </li>
             </ul>
           </div>
