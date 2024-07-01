@@ -10,7 +10,7 @@ It's suggested to ask questions on the [Github issue tracker](https://github.com
 
 Or, join the WeChat Group(Commucation in Chinese) by scanning the QR code below:
 
-<img src="https://res.cloudinary.com/sorrycc/image/upload/v1719367048/blog/8zehw4gx.jpg" width="120" />
+<img src="https://img.alicdn.com/imgextra/i1/O1CN01hsmeT71qQTN0OTq5F_!!6000000005490-0-tps-1050-1671.jpg" width="120" />
 
 Or, join the Telegram Group by clicking the link below:
 

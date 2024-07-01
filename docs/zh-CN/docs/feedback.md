@@ -11,7 +11,7 @@ translated_at: '2024-06-26T13:22:39.446Z'
 
 或者，通过扫描下方的二维码加入微信群（中文交流）：
 
-<img src="https://res.cloudinary.com/sorrycc/image/upload/v1719367048/blog/8zehw4gx.jpg" width="120" />
+<img src="https://img.alicdn.com/imgextra/i1/O1CN01hsmeT71qQTN0OTq5F_!!6000000005490-0-tps-1050-1671.jpg" width="120" />
 
 或者，通过点击下方链接加入电报群：
 
