@@ -44,6 +44,7 @@ export async function build() {
     let template = fs.readFileSync(templatePath, 'utf-8');
     let htmlContent2 = ejs.render(template, {
       content: htmlContent,
+      editUrl: `https://github.com/umijs/makojs.dev/edit/master/docs/${markdown}`,
       title: attributes.title || '',
       isHome: html === 'index.html',
     });
