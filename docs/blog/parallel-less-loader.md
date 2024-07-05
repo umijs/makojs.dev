@@ -39,7 +39,7 @@ Mako 的 rust 部分会根据机器配置启动线程池，将所有 cpu 都利�
 - workerpool 支持 child_process、worker_threads、WebWorker 多种模式，可兼容低版本 nodejs 和浏览器环境，piscina 只基于 worker_threads，专为 nodejs 设计;
 - 二者在性能上没有明显差异。
 
-早期我们基于 workerpool 写了一版，构建优能有明显提升，之前的大项目， less 编译耗时从 **5s** 降低到了 **1s**。如果组织了一个[大量 Less 文件的仓库](https://github.com/umijs/benchmark/tree/master/projects/lots-of-less)，和 Rust 构建器竞品的 Benchmark 对比如下。
+早期我们基于 workerpool 写了一版，构建性能有明显提升，之前的大项目， less 编译耗时从 **5s** 降低到了 **1s**。如果组织了一个[大量 Less 文件的仓库](https://github.com/umijs/benchmark/tree/master/projects/lots-of-less)，和 Rust 构建器竞品的 Benchmark 对比如下。
 
 ![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
 
