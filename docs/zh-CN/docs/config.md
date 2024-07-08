@@ -548,8 +548,8 @@ function App() {
 
 ### resolve
 
-- 类型：`{ alias: Record<string, string>, extensions: string[] }`
-- 默认值：`{ alias: {}, extensions: ["js", "jsx", "ts", "tsx"] }`
+- 类型：`{ alias: Array<[string, string]>, extensions: string[] }`
+- 默认值：`{ alias: [], extensions: ["js", "jsx", "ts", "tsx"] }`
 
 `resolve` 配置。
 
@@ -561,9 +561,9 @@ function App() {
 ```ts
 {
   resolve: {
-    alias: {
-      "@": "./src",
-    },
+    alias: [
+      ["@", "./src"]
+    ],
     extensions: ["js", "jsx", "ts", "tsx"],
   },
 }
@@ -576,10 +576,10 @@ function App() {
 ```diff
 {
   resolve: {
-    alias: {
--       "@/src/*": "./src/*",
-+       "@/src": "./src",
-    },
+    alias: [
+-      ["@/src/*", "./src/*"],
++      [ "@/src", "./src"],
+    ],
   },
 }
 ```
@@ -589,10 +589,10 @@ function App() {
 ```diff
 {
   resolve: {
-    alias: {
--       "@/src": "src",
-+       "@/src": "./src",
-    },
+    alias: [
+-       ["@/src", "src"],
++       ["@/src", "./src"],
+    ],
   },
 }
 ```

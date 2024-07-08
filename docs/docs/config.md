@@ -79,7 +79,7 @@ Specify the code splitting strategy. Use `auto` or `granular` strategy for SPA, 
       // Node modules those will be split to framework chunk
       frameworkPackages: [ "react", "antd" ],
       // (optional) The minimum size of the node module to be split
-      lib_min_size: 160000
+      libMinSize: 160000
     }
   }
 }
@@ -265,7 +265,7 @@ Then, when the code encounters `import foo from "foo"`, it will be replaced with
 - Type: `boolean`
 - Default: `false`
 
-Whether to fix flexbugs.
+Whether to fix flexBugs.
 
 ### forkTsChecker
 
@@ -373,7 +373,7 @@ Whether to enable `mdx` support.
 ### minify
 
 - Type: `boolean`
-- Default: mode 为 development 时为 `false`，production 时为 `true`
+- Default: mode will be `false` when mode is development, and `true` when mode is production
 
 Whether to minify the code.
 
@@ -547,8 +547,8 @@ function App() {
 
 ### resolve
 
-- Type: `{ alias: Record<string, string>, extensions: string[] }`
-- Default: `{ alias: {}, extensions: ["js", "jsx", "ts", "tsx"] }`
+- Type: `{ alias: Array<[string, string]>, extensions: string[] }`
+- Default: `{ alias: [], extensions: ["js", "jsx", "ts", "tsx"] }`
 
 `resolve` configuration.
 
@@ -560,9 +560,9 @@ e.g.
 ```ts
 {
   resolve: {
-    alias: {
-      "@": "./src",
-    },
+    alias: [
+      ["@", "./src"]
+    ],
     extensions: ["js", "jsx", "ts", "tsx"],
   },
 }
@@ -575,10 +575,10 @@ e.g.
 ```diff
 {
   resolve: {
-    alias: {
--       "@/src/*": "./src/*",
-+       "@/src": "./src",
-    },
+    alias: [
+-      ["@/src/*", "./src/*"],
++      [ "@/src", "./src"],
+    ],
   },
 }
 ```
@@ -588,10 +588,10 @@ Notice 2: If you want to alias to a local path, make sure to add the `./` prefix
 ```diff
 {
   resolve: {
-    alias: {
--       "@/src": "src",
-+       "@/src": "./src",
-    },
+    alias: [
+-       ["@/src", "src"],
++       ["@/src", "./src"],
+    ],
   },
 }
 ```
