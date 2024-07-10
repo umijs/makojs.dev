@@ -82,6 +82,8 @@ Complete!
 
 ## Bundle with Umi
 
+> If you are using Umi@3, please try to use the [umi-plugin-mako](https://github.com/xiaohuoni/umi-plugin-mako) plugin.
+
 The latest Umi supports Mako out of the box. You can enable Mako in Umi project by setting the `mako` field in the config file.
 
 First, make sure you have umi@4.2.0 or above installed.

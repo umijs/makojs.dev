@@ -83,6 +83,8 @@ Complete!
 
 ## 与 Umi 打包
 
+> 如果您在使用 Umi@3，请尝试使用 [umi-plugin-mako](https://github.com/xiaohuoni/umi-plugin-mako) 插件。
+
 最新的 Umi 默认支持 Mako。你可以通过在配置文件中设置 `mako` 字段，在 Umi 项目中启用 Mako。
 
 首先，确保你安装了 umi@4.2.0 或更高版本。
