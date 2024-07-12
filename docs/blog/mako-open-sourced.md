@@ -101,7 +101,7 @@ $ npx umi build
 
 If you want to discuss issues or suggestions about Mako, you can scan the QR code to join our WeChat group. (If it's expired or the group is full, please go to https://makojs.dev/docs/feedback for a new QR code.)
 
-<img src="https://img.alicdn.com/imgextra/i1/O1CN01kKspME1FdAZ4cQ1F5_!!6000000000509-0-tps-1050-1671.jpg_240x240.jpg" width="120" />
+<img src="https://img.alicdn.com/imgextra/i2/O1CN01ZR14oX1bp0LmrEwpN_!!6000000003513-0-tps-1050-1671.jpg" width="120" />
 
 Or click the following link to join our Telegram group.
 

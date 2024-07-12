@@ -100,7 +100,7 @@ $ npx umi build
 
 如果你想交流关于 Mako 的问题或建议，可以扫码加我们的微信群。（过期或群满了请到 https://makojs.dev/docs/feedback 查看新的二维码）
 
-<img src="https://img.alicdn.com/imgextra/i1/O1CN01kKspME1FdAZ4cQ1F5_!!6000000000509-0-tps-1050-1671.jpg_240x240.jpg" width="120" />
+<img src="https://img.alicdn.com/imgextra/i2/O1CN01ZR14oX1bp0LmrEwpN_!!6000000003513-0-tps-1050-1671.jpg" width="120" />
 
 或者点击以下链接加入 Telegram 群。
 
