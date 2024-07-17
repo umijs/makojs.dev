@@ -187,6 +187,13 @@ import("./a.js");
 
 是否输出资产文件。在构建纯服务端渲染项目时，通常设置为 `false`，因为此时不需要资产文件。
 
+### emitDecoratorMetadata
+
+- Type: `boolean`
+- Default: `false`
+
+是否输出 decorator metadata。
+
 ### emotion
 
 - 类型：`boolean`
@@ -209,6 +216,46 @@ import("./a.js");
     index: "./src/index.js",
     login: "./src/login.js",
   },
+}
+```
+
+### experimental.detectLoop
+
+- 类型：`false| { "ignoreNodeModules": bool, "graphviz": bool }`
+- 默认：`{ "ignoreNodeModules": true, "graphviz": false }`
+
+生成依赖循环信息的实验配置。设置为 `false` 可禁用此功能。
+
+配置项：
+
+- `ignoreNodeModules` 用于忽略包含来自 node_modules 的文件的依赖循环。
+- `graphviz` 用于生成名为 `_mako_loop_detector.dot` 的 graphviz dot 文件，用于可视化依赖循环。
+
+e.g.
+
+```json
+{
+  "experimental": {
+    "ignoreNodeModules": false,
+    "graphviz": true
+  }
+}
+```
+
+### experimental.requireContext
+
+- 类型：`bool`
+- 默认：`true`
+
+实验性配置，用于启用或禁用 [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) 功能。
+
+e.g.
+
+```json
+{
+  "experimental": {
+    "requireContext": false
+  }
 }
 ```
 
@@ -500,7 +547,7 @@ publicPath 配置。注意：有一个特殊值 `"runtime"`，这意味着它将
 
 ### px2rem
 
-- 类型：`false | { root?: number, propBlackList?: string[], propWhiteList?: string[], selectorBlackList?: string[], selectorWhiteList?: string[], minPixelValue?: number }`
+- 类型：`false | { root?: number, propBlackList?: string[], propWhiteList?: string[], selectorBlackList?: string[], selectorWhiteList?: string[], selectorDoubleList?: string[], minPixelValue?: number }`
 - 默认值：`false`
 
 是否启用 px2rem 转换。
@@ -510,6 +557,7 @@ publicPath 配置。注意：有一个特殊值 `"runtime"`，这意味着它将
 - `propWhiteList`，属性白名单
 - `selectorBlackList`，选择器黑名单
 - `selectorWhiteList`，选择器白名单
+- `selectorDoubleList`，选择器白名单，会被转换为两倍的值
 - `minPixelValue`，最小像素值，默认为 `0`
 
 ### react
@@ -656,7 +704,7 @@ babel-plugin-import 的简化版本，仅支持三个配置项：libraryName，l
 ### useDefineForClassFields
 
 - 类型：`boolean`
-- 默认值：`false`
+- 默认值：`true`
 
 是否使用 `defineProperty` 来定义类字段。
 
@@ -680,7 +728,6 @@ babel-plugin-import 的简化版本，仅支持三个配置项：libraryName，l
 ### writeToDisk
 
 - 类型：`boolean`
-
 - 默认值：`true`
 
 是否在开发模式下将构建结果写入磁盘。
