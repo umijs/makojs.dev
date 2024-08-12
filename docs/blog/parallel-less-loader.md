@@ -41,7 +41,7 @@ Mako 的 rust 部分会根据机器配置启动线程池，将所有 cpu 都利�
 
 早期我们基于 workerpool 写了一版，构建性能有明显提升，之前的大项目， less 编译耗时从 **5s** 降低到了 **1s**。如果组织了一个[大量 Less 文件的仓库](https://github.com/umijs/benchmark/tree/master/projects/lots-of-less)，和 Rust 构建器竞品的 Benchmark 对比如下。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN017hEGJT1NiDsCxNHVJ_!!6000000001603-2-tps-2074-372.png)
 
 workerpool 默认创建的 worker 线程数量是 `require('os').cpus().length - 1`, 预留一个 cpu 核心给 nodejs 主线程，防止主线程因无 cpu 可用而被挂起。在实际测试中，基于 workerpool 的实现，在 linux 机器下，如果 nodejs 版本低于 20.3.0， 可能会意外退出（signal: "SIGABRT"），原因暂时无法定位。不过基于 piscina 的实现没有这个问题。下面上代码：
 

@@ -69,7 +69,7 @@ Building with mako for development...
 
 打开浏览器并访问 http://localhost:3000 来查看输出。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715740987/blog/hlufbyzp.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN01jszLsC1ERtCszPjuq_!!6000000000349-2-tps-1372-672.png)
 
 最后，如果你想为生产环境构建项目，请运行以下命令。
 

@@ -14,7 +14,7 @@ Checkout [Getting Started](/docs/getting-started) to give Mako a try.
 
 ## Benchmark
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01PrzecB1WONFfL2K60_!!6000000002778-2-tps-2018-340.png)
 
 Checkout [Benchmark](/blog/benchmark) for more details.
 

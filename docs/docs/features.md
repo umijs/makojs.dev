@@ -14,13 +14,13 @@ But, everything is configurable. If you have a file type that Mako doesn't suppo
 
 Mako is reliable. It's used in hundreds of projects at Ant Group, like Web App，Hybrid App, Mini Program (Partly), Low Code, Serverless, Library Development, [Ant Design](https://ant.design/) and others. We have a lot of tests and benchmarks to ensure the quality of Mako. We have also tested Mako in thousands of old projects, and thousands of npm packages and it's different versions to ensure the compatibility.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1719198069/blog/neqp18f8.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN017VwtQK22hfdt4p1zf_!!6000000007152-2-tps-1902-1062.png)
 
 ## Blazing Fast
 
 Mako is designed to be blazing fast. We use Rust for the core bundling logic, and we use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile files in parallel. We have spend lots of time optimizing the performance of Mako. And Mako is faster than other Rust bundlers and Webpack in benchmark case.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01PrzecB1WONFfL2K60_!!6000000002778-2-tps-2018-340.png)
 
 Check out [《聊下 Mako 的 Benchmark》](/blog/benchmark) and the [benchmark repo](https://github.com/umijs/benchmark) for more details.
 
@@ -30,7 +30,7 @@ When files change, Mako will automatically update your code in the browser. No n
 
 And Mako has integrated React Fast Refresh, when you change a React component, it will only update the component, not the whole page.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718937230/blog/o0dt1fuf.gif)
+![](https://img.alicdn.com/imgextra/i1/O1CN01hWz91Y25X5KsM9XPw_!!6000000007535-1-tps-1340-610.gif)
 
 HMR in full ant-design-pro project: Webpack(above) vs Mako(below).
 
@@ -40,7 +40,7 @@ Mako has a built-in diagnostics system that will show you errors and warnings in
 
 When you have an error in your code, Mako will show you beautiful diagnostics. Every error includes a code frame that shows you the context of the error. Many errors also include suggestions for how to fix the error.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718937775/blog/ovcrajw0.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN01wYKT2W1Gpp8V6XVU7_!!6000000000672-2-tps-2000-494.png)
 
 ## TypeScript
 
@@ -59,7 +59,7 @@ Less is supported out of the box. Mako will automatically compile your Less file
 
 Since less is used heavily in Ant Group, Mako has been optimized for this. We use workers in Node.js with [piscina](https://www.npmjs.com/package/piscina) to compile less files in parallel, which can speed up the compilation process. So, it's faster than other rust bundle tools in this case by default. Checkout [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader) for more details.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN017hEGJT1NiDsCxNHVJ_!!6000000001603-2-tps-2074-372.png)
 
 And there're something you might want to know:
 
@@ -246,7 +246,7 @@ Mako has a basic built-in code analysis system that will show you the size of yo
 
 The output will be like this:
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718973387/blog/yoo60fny.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN01eIGbjI1cadY6vqRNo_!!6000000003617-2-tps-3806-1718.png)
 
 ## RSC
 

@@ -20,7 +20,7 @@ _2024-06-03 by [sorrycc](https://github.com/sorrycc)_
 
 跑的项目是大家都在跑的 Turbopack 测试项目，跑在 M2 Pro Max 电脑上。包含维度有 dev 冷启动时间、根节点和叶子节点的 HMR 时间、生产 Build 构建时间和 JS 产物尺寸。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01PrzecB1WONFfL2K60_!!6000000002778-2-tps-2018-340.png)
 
 如果大家感兴趣，可以手动 clone 仓库跑跑看。
 
@@ -50,7 +50,7 @@ pnpm benchmark
 
 Benchmark 本身是客观的，但 Benchmark 啥和怎么 Benchmark 是主观的。比如这个测试项目，如果 Mako 的数据不太理想，你问我要不要换个项目，我估计会犹豫一下。同时各个 Bundle 工具的优缺点不同，比如 Mako，缺点是 Tree Shaking 还没做并发、没做物理缓存、没做按需编译等，优点是有做 Chunk 生成的并发、Less 编译的并发、类 MFSU 的提速方案等。所以，假如我们做一个满是 Less 的项目，那 Mako 的数据就会很好看。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717406852/blog/blxe7k53.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN01e2cgvj1IhEwdj0Qrh_!!6000000000924-2-tps-1976-216.png)
 
 ```bash
 pnpm benchmark --tools mako,rsbuild --project projects/lots-of-less
@@ -62,7 +62,7 @@ Benchmark 数据也和大家做的功能多少和完善度有关，比如 react 
 
 Mako 还有个试验性的 SSU 功能，类似之前的 MFSU 实现，会做依赖的打包和缓存。根据源码和依赖比的不同，可实现 Dev 热启动的 10-50 倍提速。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717407008/blog/r09xaxke.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN01B0hTND1NI7IVs2zDh_!!6000000001546-2-tps-2198-852.png)
 
 ```bash
 SSU=true pnpm --filter @example/with-antd bundler mako dev

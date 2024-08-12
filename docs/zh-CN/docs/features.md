@@ -15,13 +15,13 @@ translated_at: '2024-06-26T13:23:11.573Z'
 
 Mako 是可靠的。它在蚂蚁集团的数百个项目中得到了应用，如 Web App、Hybrid App、小程序（部分）、低代码、无服务器、库开发、[Ant Design](https://ant.design/) 等。我们进行了大量的测试和基准测试来确保 Mako 的质量。我们还在成千上万的旧项目中测试了 Mako，以及数千个 npm 包及其不同版本，以确保兼容性。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1719198069/blog/neqp18f8.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN017VwtQK22hfdt4p1zf_!!6000000007152-2-tps-1902-1062.png)
 
 ## 极快
 
 Mako 设计之初就是为了速度。我们使用 Rust 来处理核心打包逻辑，并使用 Node.js 中的 [piscina](https://www.npmjs.com/package/piscina) 来并行编译文件。我们花了很多时间优化 Mako 的性能。而且，Mako 在基准测试用例中比其他 Rust 打包器和 Webpack 更快。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01PrzecB1WONFfL2K60_!!6000000002778-2-tps-2018-340.png)
 
 查看 [《聊下 Mako 的 Benchmark》](/blog/benchmark) 和 [基准测试仓库](https://github.com/umijs/benchmark) 了解更多详情。
 
@@ -31,7 +31,7 @@ Mako 设计之初就是为了速度。我们使用 Rust 来处理核心打包逻
 
 而且，Mako 已集成 React Fast Refresh，当你更改一个 React 组件时，它只会更新组件，而不是整个页面。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718937230/blog/o0dt1fuf.gif)
+![](https://img.alicdn.com/imgextra/i1/O1CN01hWz91Y25X5KsM9XPw_!!6000000007535-1-tps-1340-610.gif)
 
 在完整的 ant-design-pro 项目中的 HMR：Webpack（上）vs Mako（下）。
 
@@ -41,7 +41,7 @@ Mako 内置了一个诊断系统，将在终端显示错误和警告。（WIP：
 
 当你的代码出现错误时，Mako 会显示精美的诊断信息。每个错误都包括一个代码框，向你展示错误的上下文环境。很多错误还包括了如何修复错误的建议。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718937775/blog/ovcrajw0.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN01wYKT2W1Gpp8V6XVU7_!!6000000000672-2-tps-2000-494.png)
 
 ## TypeScript
 
@@ -60,7 +60,7 @@ Less 支持开箱即用。Mako 会自动将你的 Less 文件编译为 CSS。
 
 由于蚂蚁集团大量使用 Less，Mako 在此方面进行了优化。我们在 Node.js 中使用 [piscina](https://www.npmjs.com/package/piscina) 的 workers 并行编译 less 文件，这可以加速编译过程。因此，默认情况下，它比其他 rust 打包工具在这个方面更快。更多详情请查看 [《Node 多线程的魔力 - Mako 中的 Less 并行编译》](/blog/parallel-less-loader)。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715149825/blog/him5ls7i.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN017hEGJT1NiDsCxNHVJ_!!6000000001603-2-tps-2074-372.png)
 
 这里有一些你可能想知道的事情：
 
@@ -247,7 +247,7 @@ Mako 内置了一个基本的代码分析系统，可以显示您的代码大小
 
 输出将会是这样的：
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1718973387/blog/yoo60fny.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN01eIGbjI1cadY6vqRNo_!!6000000003617-2-tps-3806-1718.png)
 
 ## RSC
 

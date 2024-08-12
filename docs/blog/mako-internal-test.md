@@ -16,7 +16,7 @@ _2024-05-15 by [sorrycc](https://github.com/sorrycc)_
 
 Mako 是极快和生产级的前端构建工具，基于 Rust。Mako 去年上半年立项，下半年 2023.11.24 在蚂蚁集团内部正式发布，通过工程化的方式验证了数千个项目和 npm 包，已落地数百个项目，服务了中后台、小程序、低代码、营销等多个不同平台和业务场景。经过大量项目的实践和长时间的迭代，Mako 已经成熟，在速度和产物尺寸方面都已和社区的 Rust 构建方案齐平或实现超越，现在我们决定**在开源之前先做一轮内测来收集更多的反馈**。
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715742144/blog/oug9jbat.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN01RmMfYO1w1BCcB2fqX_!!6000000006247-2-tps-2024-230.png)
 
 <p style="text-align:center;">Benchmark 基于 <a href="https://github.com/farm-fe/performance-compare">performance-compare</a> 里的项目，相关仓库会随 Mako 一起开源。</p>
 
@@ -41,7 +41,7 @@ $ npm create mako
 
 如果你有任何问题或建议，可以在扫码加我们的微信群。
 
-<img src="https://res.cloudinary.com/sorrycc/image/upload/v1718286461/blog/rl7ysd3v.jpg" width="120" />
+<img src="https://img.alicdn.com/imgextra/i4/O1CN019ugxu81plFjfP1daH_!!6000000005400-0-tps-1050-1671.jpg" width="120" />
 
 或者点击以下链接加入 Telegram 群。
 

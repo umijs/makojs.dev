@@ -68,7 +68,7 @@ Building with mako for development...
 
 Open the browser and visit http://localhost:3000 to see the output.
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1715740987/blog/hlufbyzp.png)
+![](https://img.alicdn.com/imgextra/i1/O1CN01jszLsC1ERtCszPjuq_!!6000000000349-2-tps-1372-672.png)
 
 Finally, if you want to build the project for production, run the following command.
 

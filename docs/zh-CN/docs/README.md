@@ -15,7 +15,7 @@ Mako `['mɑːkoʊ]` 是一个基于 **Rust** 的**极速**、**生产级别**的
 
 ## 基准测试
 
-![](https://res.cloudinary.com/sorrycc/image/upload/v1717062514/blog/smnzhuk1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01PrzecB1WONFfL2K60_!!6000000002778-2-tps-2018-340.png)
 
 查看 [基准测试](./blog/benchmark) 获取更多详情。
 
