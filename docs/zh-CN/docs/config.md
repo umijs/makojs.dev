@@ -1,6 +1,6 @@
 ---
 title: Mako - Config
-translated_at: '2024-06-26T13:24:18.282Z'
+translated_at: '2024-08-25T16:11:18.282Z'
 ---
 
 # 配置
@@ -136,7 +136,7 @@ translated_at: '2024-06-26T13:24:18.282Z'
 ### define
 
 - 类型：`Record<string, string>`
-- 默认值：`{ NODE_ENV: "development" | "production }`
+- 默认值：`{ ['process.env.NODE_ENV']: "development" | "production }`
 
 指定需要在代码中替换的变量。
 
@@ -149,8 +149,6 @@ translated_at: '2024-06-26T13:24:18.282Z'
   },
 }
 ```
-
-注意：当前，define 将自动处理 `process.env` 前缀。
 
 ### devServer
 

@@ -135,7 +135,7 @@ Whether to export only the class names of CSS Modules, not the values of CSS Mod
 ### define
 
 - Type: `Record<string, string>`
-- Default: `{ NODE_ENV: "development" | "production }`
+- Default: `{ ['process.env.NODE_ENV']: "development" | "production }`
 
 Specify the variables that need to be replaced in the code.
 
@@ -148,8 +148,6 @@ e.g.
   },
 }
 ```
-
-Notice: Currently, define will automatically handle the `process.env` prefix.
 
 ### devServer
 
@@ -217,6 +215,7 @@ e.g.
   },
 }
 ```
+
 ### experimental.detectLoop
 
 - Type: `false| { "ignoreNodeModules": bool, "graphviz": bool }`
