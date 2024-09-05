@@ -3,7 +3,7 @@
 1. 本地构建 Mako 官网的 HTML 产物并本地托管
 
 ```bash
-$ git clone git@github.com:umijs/makojs.dev.git --branch support/test-petercat
+$ git clone git@github.com:umijs/makojs.dev.git --branch feature/petercat-bubble
 $ pnpm i && pnpm build && cd dist
 $ pnpm dlx serve
 ```
