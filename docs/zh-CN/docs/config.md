@@ -136,7 +136,7 @@ translated_at: '2024-08-25T16:11:18.282Z'
 ### define
 
 - 类型：`Record<string, string>`
-- 默认值：`{ ['process.env.NODE_ENV']: "development" | "production }`
+- 默认值：`{ NODE_ENV: "development" | "production }`
 
 指定需要在代码中替换的变量。
 
@@ -149,6 +149,8 @@ translated_at: '2024-08-25T16:11:18.282Z'
   },
 }
 ```
+
+注意：当前，define 将自动处理 `process.env` 前缀。
 
 ### devServer
 
@@ -163,6 +165,31 @@ translated_at: '2024-08-25T16:11:18.282Z'
 - 默认值：`"source-map"`
 
 指定源映射类型。
+
+### duplicatePackageChecker
+
+- 类型：`{ verbose: boolean, showHelp: boolean, emitError: boolean } | false`
+- 默认值：`false`
+
+重复包检查器的配置。
+
+子配置项：
+
+- `verbose`：是否输出详细信息。
+- `showHelp`：是否显示帮助信息。
+- `emitError`：发现重复包时是否抛出错误。
+
+示例：
+
+```json
+{
+  "duplicatePackageChecker": {
+    "verbose": true,
+    "showHelp": true,
+    "emitError": false
+  }
+}
+```
 
 ### dynamicImportToRequire
 
@@ -376,9 +403,25 @@ e.g.
 
 指定需要转换为 `base64` 格式的资产文件的大小限制。
 
+
+### inlineExcludesExtensions
+
+- 类型: `string[]`
+- 默认值: `[]`
+
+指定不需要转换为 `base64` 格式的资产文件的后缀名列表。
+
+例如：
+
+```ts
+{
+  "inlineExcludesExtensions": ["webp"]
+}
+```
+
 ### less
 
-- 类型：`{ modifyVars?: Record<string, string>, sourceMap?: { sourceMapFileInline?: boolean, outputSourceFiles?: boolean }, math?: "always" | "strict" | "parens-division" | "parens" | "strict-legacy" | number, plugins?: ([string, Record<string, any>]|string)[] }`
+- 类型：`{ modifyVars?: Record<string, string>, globalVars?: Record<string, string>, sourceMap?: { sourceMapFileInline?: boolean, outputSourceFiles?: boolean }, math?: "always" | "strict" | "parens-division" | "parens" | "strict-legacy" | number, plugins?: ([string, Record<string, any>]|string)[] }`
 - 默认值：`{}`
 
 指定 less 配置。
@@ -390,6 +433,10 @@ e.g.
   modifyVars: {
     'primary-color': '#1DA57A',
     'link-color': '#1DA57A',
+  },
+  globalVars: {
+    'primary-color': '#ffff00',
+    hack: 'true; @import "your-global-less-file.less";',
   },
   sourceMap: {
     sourceMapFileInline: true,
@@ -446,8 +493,8 @@ e.g.
 
 ### output
 
-- 类型：`{ path: string, mode: "bundle" | "bundless", esVersion: "es3" | "es5" | "es2015" | "es2016" | "es2017" | "es2018" | "es2019" | "es2020" | "es2021" | "es2022" | "esnext", meta: boolean, chunkLoadingGlobal: string, preserveModules: boolean, preserveModulesRoot: string }`
-- 默认值：`{ path: "dist", mode: "bundle", esVersion: "es2022", meta: false, chunkLoadingGlobal: "", preserveModules: false, preserveModulesRoot: "" }`
+- 类型：`{ path: string, mode: "bundle" | "bundless", esVersion: "es3" | "es5" | "es2015" | "es2016" | "es2017" | "es2018" | "es2019" | "es2020" | "es2021" | "es2022" | "esnext", meta: boolean, chunkLoadingGlobal: string, preserveModules: boolean, preserveModulesRoot: string; crossOriginLoading: false | "anonymous" | "use-credentials" }`
+- 默认值：`{ path: "dist", mode: "bundle", esVersion: "es2022", meta: false, chunkLoadingGlobal: "", preserveModules: false, preserveModulesRoot: "", crossOriginLoading: false }`
 
 输出相关配置。
 
@@ -458,6 +505,8 @@ e.g.
 - `chunkLoadingGlobal`，`chunk loading` 的全局变量名称
 - `preserveModules`，是否保留模块目录结构（仅适用于 Bundless）
 - `preserveModulesRoot`，是否保留模块目录结构的根目录（仅限 Bundless）
+- `crossOriginLoading`，控制异步 chunk 加载时 `script` 及 `link` 标签的 `crossorigin` 属性值
+- `globalModuleRegistry`，是否允许在多 entry 之间共享模块注册中心
 
 ### optimization
 
@@ -496,6 +545,7 @@ e.g.
     stats: {
       startTime: number;
       endTime: number;
+      ...
     };
   }) => void;
   load?: (filePath: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
@@ -508,6 +558,13 @@ JSHooks 是一组用来扩展 Mako 编译过程的钩子函数。
 - `buildStart`，构建开始前调用
 - `load`，用于加载文件，返回文件内容和类型，类型支持 `css`、`js`、`jsx`、`ts`、`tsx`
 - `generateEnd`，生成完成后调用，`isFirstCompile` 可用于判断是否为首次编译，`time` 为编译时间，`stats` 是编译统计信息
+
+### progress
+
+- Type: false | { progressChars: string }
+- Default: { progressChars: "▨▨" }
+
+是否显示构建进度条。
 
 ### providers
 
@@ -543,6 +600,12 @@ Buffer;
 
 publicPath 配置。注意：有一个特殊值 `"runtime"`，这意味着它将切换到运行时模式并使用运行时的 `window.publicPath` 作为 publicPath。
 
+如果你想在运行时设置 `publicPath`，请使用 `__mako_public_path__`。（注：`__webpack_public_path__` 也是支持的）
+
+```ts
+__mako_public_path__ = '/foo/';
+```
+
 ### px2rem
 
 - 类型：`false | { root?: number, propBlackList?: string[], propWhiteList?: string[], selectorBlackList?: string[], selectorWhiteList?: string[], selectorDoubleList?: string[], minPixelValue?: number }`
@@ -557,6 +620,15 @@ publicPath 配置。注意：有一个特殊值 `"runtime"`，这意味着它将
 - `selectorWhiteList`，选择器白名单
 - `selectorDoubleList`，选择器白名单，会被转换为两倍的值
 - `minPixelValue`，最小像素值，默认为 `0`
+- `mediaQuery`，是否转换媒体查询中的 px, 默认 `false`
+
+其中 `selectorBlackList`、`selectorWhiteList`、`selectorDoubleList` 均支持传递正则表达式或者字符串，如
+
+```json
+"selectorBlackList": [".a", "/.__CustomClass_/"]
+```
+
+> 被字符 `/` 包裹的字符串会被当作正则表达式解析。
 
 ### react
 
@@ -661,6 +733,24 @@ function App() {
 
 - `clientComponentTpl`，客户端组件模板，使用 `{{path}}` 表示组件的路径，使用 `{{id}}` 表示模块的 id。
 - `emitCSS`，是否输出 CSS 组件。
+
+### sass
+
+- 类型: `Options<'async'>`
+- 默认值: `{}`
+
+> 未安装 `sass` 包。请运行 `npm install sass` 进行安装。
+
+指定 sass [配置](https://sass-lang.com/documentation/js-api/interfaces/options/).
+
+
+例如：
+
+```ts
+{
+  "sourceMap": false
+}
+```
 
 ### stats
 

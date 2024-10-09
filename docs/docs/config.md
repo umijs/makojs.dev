@@ -135,7 +135,7 @@ Whether to export only the class names of CSS Modules, not the values of CSS Mod
 ### define
 
 - Type: `Record<string, string>`
-- Default: `{ ['process.env.NODE_ENV']: "development" | "production }`
+- Default: `{ NODE_ENV: "development" | "production }`
 
 Specify the variables that need to be replaced in the code.
 
@@ -148,6 +148,8 @@ e.g.
   },
 }
 ```
+
+Notice: Currently, define will automatically handle the `process.env` prefix.
 
 ### devServer
 
@@ -162,6 +164,31 @@ Specify the devServer configuration.
 - Default: `"source-map"`
 
 Specify the source map type.
+
+### duplicatePackageChecker
+
+- Type: `{ verbose: boolean, showHelp: boolean, emitError: boolean } | false`
+- Default: `false`
+
+Configuration for duplicate package checker.
+
+Child configuration items:
+
+- `verbose`: Whether to output detailed information.
+- `showHelp`: Whether to show help information.
+- `emitError`: Whether to emit an error when duplicate packages are found.
+
+Example:
+
+```json
+{
+  "duplicatePackageChecker": {
+    "verbose": true,
+    "showHelp": true,
+    "emitError": false
+  }
+}
+```
 
 ### dynamicImportToRequire
 
@@ -215,7 +242,6 @@ e.g.
   },
 }
 ```
-
 ### experimental.detectLoop
 
 - Type: `false| { "ignoreNodeModules": bool, "graphviz": bool }`
@@ -370,14 +396,31 @@ Notice: This configuration can only be used with umd, because injecting CSS is n
 
 ### inlineLimit
 
-- Type: `number`
-- Default: `10000`
+- Type: `string[]`
+- Default: `[]`
 
 Specify the size limit of the assets file that needs to be converted to `base64` format.
 
+
+### inlineExcludesExtensions
+
+- Type: `string[]`
+- Default: `[]`
+
+Excludes assets file extension list that don't need to be converted to `base64` format.
+
+e.g.
+
+```ts
+{
+  "inlineExcludesExtensions": ["webp"]
+}
+```
+
+
 ### less
 
-- Type: `{ modifyVars?: Record<string, string>, sourceMap?: { sourceMapFileInline?: boolean, outputSourceFiles?: boolean }, math?: "always" | "strict" | "parens-division" | "parens" | "strict-legacy" | number, plugins?: ([string, Record<string, any>]|string)[] }`
+- Type: `{ modifyVars?: Record<string, string>, globalVars?: Record<string, string>, sourceMap?: { sourceMapFileInline?: boolean, outputSourceFiles?: boolean }, math?: "always" | "strict" | "parens-division" | "parens" | "strict-legacy" | number, plugins?: ([string, Record<string, any>]|string)[] }`
 - Default: `{}`
 
 Specify the less configuration.
@@ -389,6 +432,10 @@ e.g.
   modifyVars: {
     'primary-color': '#1DA57A',
     'link-color': '#1DA57A',
+  },
+  globalVars: {
+    'primary-color': '#ffff00',
+    hack: 'true; @import "your-global-less-file.less";',
   },
   sourceMap: {
     sourceMapFileInline: true,
@@ -431,7 +478,7 @@ Specify the build mode, `"development"` or `"production"`.
 
 ### moduleIdStrategy
 
-- Type: `"named" | "hashed"`
+- Type: `"named" | "hashed" | "numeric"`
 - Default: `"named"` when mode is development, `"hashed"` when mode is production
 
 Specify the strategy for generating moduleId.
@@ -445,8 +492,8 @@ Whether to enable node polyfill.
 
 ### output
 
-- Type: `{ path: string, mode: "bundle" | "bundless", esVersion: "es3" | "es5" | "es2015" | "es2016" | "es2017" | "es2018" | "es2019" | "es2020" | "es2021" | "es2022" | "esnext", meta: boolean, chunkLoadingGlobal: string, preserveModules: boolean, preserveModulesRoot: string }`
-- Default: `{ path: "dist", mode: "bundle", esVersion: "es2022", meta: false, chunkLoadingGlobal: "", preserveModules: false, preserveModulesRoot: "" }`
+- Type: `{ path: string, mode: "bundle" | "bundless", esVersion: "es3" | "es5" | "es2015" | "es2016" | "es2017" | "es2018" | "es2019" | "es2020" | "es2021" | "es2022" | "esnext", meta: boolean, chunkLoadingGlobal: string, preserveModules: boolean, preserveModulesRoot: string; crossOriginLoading: false | "anonymous" | "use-credentials" }`
+- Default: `{ path: "dist", mode: "bundle", esVersion: "es2022", meta: false, chunkLoadingGlobal: "", preserveModules: false, preserveModulesRoot: "", crossOriginLoading: false }`
 
 Output related configuration.
 
@@ -457,6 +504,8 @@ Output related configuration.
 - `chunkLoadingGlobal`, global variable name for `chunk loading`
 - `preserveModules`, whether to preserve the module directory structure (Bundless Only)
 - `preserveModulesRoot`, preserve the root directory of the module directory structure (Bundless Only)
+- `crossOriginLoading`, control the `crossorigin` attribute of the `script` tag and `link` tag for load async chunks
+- `globalModuleRegistry`, whether enable shared module registry across multi entries
 
 ### optimization
 
@@ -495,6 +544,7 @@ Specify the plugins to use.
     stats: {
       startTime: number;
       endTime: number;
+      ...
     };
   }) => void;
   load?: (filePath: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
@@ -507,6 +557,13 @@ JSHooks is a set of hook functions used to extend the compilation process of Mak
 - `buildStart`, called before Build starts
 - `load`, used to load files, return file content and type, type supports `css`, `js`, `jsx`, `ts`, `tsx`
 - `generateEnd`, called after Generate completes, `isFirstCompile` can be used to determine if it is the first compilation, `time` is the compilation time, and `stats` is the compilation statistics information
+
+### progress
+
+- Type: false | { progressChars: string }
+- Default: { progressChars: "▨▨" }
+
+Whether to display the build progress bar.
 
 ### providers
 
@@ -542,9 +599,16 @@ Buffer;
 
 publicPath configuration. Note: There is a special value `"runtime"`, which means that it will switch to runtime mode and use the runtime `window.publicPath` as publicPath.
 
+If you want to set the `publicPath` in the runtime, use `__mako_public_path__`. (Notice: `__webpack_public_path__` is also supported)
+
+```ts
+__mako_public_path__ = '/foo/';
+```
+
 ### px2rem
 
-- Type: `false | { root?: number, propBlackList?: string[], propWhiteList?: string[], selectorBlackList?: string[], selectorWhiteList?: string[], selectorDoubleList?: string[], minPixelValue?: number }`
+- Type: `false | { root?: number, propBlackList?: string[], propWhiteList?: string[], selectorBlackList?: string[],
+  selectorWhiteList?: string[], selectorDoubleList?: string[], minPixelValue?: number, mediaQuery?: boolean }`
 - Default: `false`
 
 Whether to enable px2rem conversion.
@@ -556,6 +620,15 @@ Whether to enable px2rem conversion.
 - `selectorWhiteList`, selector white list
 - `selectorDoubleList`, selector double rem list
 - `minPixelValue`，minimum pixel value, default is `0`
+- `mediaQuery`，allow px to be converted in media queries, default is `false`
+
+Among them, `selectorBlackList`, `selectorWhiteList` and `selectorDoubleList` all support passing regular expressions or strings, such as
+
+```json
+"selectorBlackList": [".a", "/.__CustomClass_/"]
+```
+
+> The string wrapped by the characters `/` will be parsed as a regular expression.
 
 ### react
 
@@ -660,6 +733,24 @@ Child configuration items:
 
 - `clientComponentTpl`, client component template, use `{{path}}` to represent the path of the component, and use `{{id}}` to represent the id of the module.
 - `emitCSS`, whether to output CSS components.
+
+### sass
+
+- Type: `Options<'async'>`
+- Default: `{}`
+
+> The "sass" package is not installed. Please run "npm install sass" to install it.
+
+Specify the sass [configuration](https://sass-lang.com/documentation/js-api/interfaces/options/).
+
+
+e.g.
+
+```ts
+{
+  "sourceMap": false
+}
+```
 
 ### stats
 
