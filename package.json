@@ -3,7 +3,8 @@
   "scripts": {
     "build": "esno scripts/build.ts",
     "dev": "nodemon --exec \"npm run build\" --watch . -e \"ejs md ts html\" -i dist -i node_modules",
-    "deploy": "esno scripts/deploy.ts"
+    "deploy": "esno scripts/deploy.ts",
+    "sync:docs": "esno scripts/sync-mako-docs.ts"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",

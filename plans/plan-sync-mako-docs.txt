@@ -1,0 +1,19 @@
+
+在 scripts 下新增一个 script，文件名为 sync-mako-docs.ts。
+
+1、通过 ts 脚本实现 config.md 和 config.zh-CN.md 的同步。参考其他 scripts 脚本，用 `import 'zx/globals';` 引入 zx 库简化脚本编写
+2、同步 mako 仓库下的 docs 下的所有文件到 makojs.dev 仓库下的对应文件里。
+需要同步的文件如下：
+- docs/config.md （同步到 docs/docs/config.md）
+- docs/config.zh-CN.md （同步到 docs/zh-CN/docs/config.md）
+3、同步时需保留当前仓库下 md 文档页头 yaml 头信息，如：
+```yaml
+---
+title: Mako - Config
+translated_at: '2024-08-25T16:11:18.282Z'
+---
+```
+4、所有逻辑写在一个脚本 ts 文件里，不要拆文件。
+5、在 package.json 里新增一个 script，key 为 sync:docs，执行 `npm run sync:docs` 时，会调用 sync-mako-docs.ts 脚本。
+6、makojs.dev 仓库路径为当前 cwd。
+7、mako 仓库路径从 cwd 下的 .env.json 里获取，key 为 makoRepoPath 。
