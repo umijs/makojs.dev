@@ -299,6 +299,34 @@ e.g.
 }
 ```
 
+### experimental.magicComment
+
+- Type: boolean
+- Default: false
+
+Experimental configuration, whether to support magic comments like webpack.
+
+e.g.
+
+```ts
+{
+  experimental: {
+    magicComment: true,
+  },
+}
+```
+
+the magic comment is like below:
+
+```ts
+import(/* makoChunkName: 'myChunk' */ "./lazy");
+import(/* webpackChunkName: 'myChunk' */ "./lazy");
+new Worker(/* makoChunkName: 'myWorker' */ new URL("./worker", import.meta.url));
+new Worker(/* webpackChunkName: 'myWorker' */ new URL("./worker", import.meta.url));
+import(/* makoIgnore: true */ "./foo");
+import(/* webpackIgnore: true */ "./foo");
+```
+
 ### externals
 
 - Type: `Record<string, string>`
@@ -537,7 +565,9 @@ Specify the plugins to use.
 // JSHooks
 {
   name?: string;
+  enforce?: "pre" | "post";
   buildStart?: () => void;
+  buildEnd?: () => void;
   generateEnd?: (data: {
     isFirstCompile: boolean;
     time: number;
@@ -550,6 +580,8 @@ Specify the plugins to use.
   load?: (filePath: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
   loadInclude?: (filePath: string) => boolean;
   resolveId?: (id: string, importer: string, { isEntry: bool }) => Promise<{ id: string, external: bool }>;
+  transform?: (content: string, id: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
+  transformInclude?: (filePath: string) => Promise<boolean> | boolean;
 }
 ```
 
