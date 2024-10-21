@@ -80,7 +80,7 @@ translated_at: '2024-08-25T16:11:18.282Z'
       // 将被拆分到框架 chunk 的 Node 模块
       frameworkPackages: [ "react", "antd" ],
       // （可选）被拆分的 node 模块的最小大小
-      lib_min_size: 160000
+      libMinSize: 160000
     }
   }
 }
@@ -299,6 +299,32 @@ e.g.
     webpackSyntaxValidate: ["foo", "bar"],
   },
 }
+```
+
+### experimental.magicComment
+
+- 类型: boolean
+- 默认值: false
+
+实验性配置，是否支持通过类似 webpack 的魔法注释。
+
+e.g.
+
+```ts
+{
+  experimental: {
+    magicComment: true,
+  },
+}
+```
+魔法注释如下：
+```ts
+import(/* makoChunkName: 'myChunk' */  "./lazy");
+import(/* webpackChunkName: 'myChunk' */  "./lazy");
+new Worker(/* makoChunkName: 'myWorker' */  new URL("./worker", import.meta.url));
+new Worker(/* webpackChunkName: 'myWorker' */  new URL("./worker", import.meta.url));
+import(/* makoIgnore: true */ "./foo");
+import(/* webpackIgnore: true */ "./foo");
 ```
 
 ### externals
@@ -538,7 +564,9 @@ e.g.
 // JSHooks
 {
   name?: string;
+  enforce?: "pre" | "post";
   buildStart?: () => void;
+  buildEnd?: () => void;
   generateEnd?: (data: {
     isFirstCompile: boolean;
     time: number;
@@ -551,6 +579,8 @@ e.g.
   load?: (filePath: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
   loadInclude?: (filePath: string) => boolean;
   resolveId?: (id: string, importer: string, { isEntry: bool }) => Promise<{ id: string, external: bool }>;
+  transform?: (content: string, id: string) => Promise<{ content: string, type: 'css'|'js'|'jsx'|'ts'|'tsx' }>;
+  transformInclude?: (filePath: string) => Promise<boolean> | boolean;
 }
 ```
 

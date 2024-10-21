@@ -41,7 +41,7 @@ $ npm create mako
 
 如果你有任何问题或建议，可以在扫码加我们的微信群。
 
-<img src="https://mdn.alipayobjects.com/huamei_lpyngx/afts/img/A*4xXlQITJ2agAAAAAAAAAAAAADjjvAQ/original" width="120" />
+<img src="https://mdn.alipayobjects.com/huamei_lpyngx/afts/img/A*y-LTR5AGYncAAAAAAAAAAAAADjjvAQ/original" width="120" />
 
 或者点击以下链接加入 Telegram 群。
 
