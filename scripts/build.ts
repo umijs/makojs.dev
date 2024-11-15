@@ -7,6 +7,41 @@ async function main() {
   await build();
 }
 
+function generateLLM() {
+  let cwd = process.cwd();
+  // 读取 templates/default.ejs 文件
+  const ejsFilePath = path.join(cwd, "templates/default.ejs");
+  const ejsContent = fs.readFileSync(ejsFilePath, "utf-8");
+
+  // 匹配 <a href="...">...</a>
+  const linkRegex = /<a href="([^"]+)">([^<]+)<\/a>/g;
+  let match;
+  const links = [];
+
+  while ((match = linkRegex.exec(ejsContent)) !== null) {
+    const url = match[1];
+    const text = match[2];
+    links.push({ url, text });
+  }
+
+  const llmsFilePath = path.join(cwd, "dist/llms.txt");
+  const base_url = "https://makojs.dev";
+
+  const docsIndexContent = [
+    "# Mako",
+    "",
+    "## Docs",
+    "",
+    ...links.map((link) => `- [${link.text}](${base_url}${link.url})`),
+    "",
+    "## Optional",
+    "",
+  ].join("\n");
+
+  fs.writeFileSync(llmsFilePath, docsIndexContent);
+  console.log("Generated llms.txt");
+}
+
 export async function build() {
   console.log('Building...');
   let cwd = process.cwd();
@@ -59,6 +94,9 @@ export async function build() {
 
   // generate rss feed
   await new Collection({ dirPath: path.join(docsDir, 'blog') }).generateRssFeed();
+
+  // generate llms.txt
+  generateLLM();
 
   console.log('Building done!');
 }
