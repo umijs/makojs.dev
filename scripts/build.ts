@@ -26,6 +26,7 @@ export async function build() {
   })();
 
   // compile markdown to html
+  let docsIndex: Array<{ title: string; url: string }> = [];
   for (let { html, markdown } of docs) {
     let mdPath = path.join(docsDir, markdown);
     let htmlPath = path.join(cwd, 'dist', html);
@@ -40,6 +41,14 @@ export async function build() {
     let htmlContent = await Markdown.parseMarkdown(body);
     fs.ensureDirSync(path.dirname(htmlPath));
     let isZhCN = mdPath.includes('/zh-CN/') || mdPath.endsWith('_zh-CN.md');
+
+    if (!isZhCN) {
+      docsIndex.push({
+        title: attributes.title || path.basename(html, '.html'),
+        url: `https://makojs.dev/${html.replace(/\.html$/, '')}`
+      });
+    }
+
     let templatePath = path.join(cwd, isZhCN ? 'templates/default_zh-CN.ejs' : 'templates/default.ejs');
     let template = fs.readFileSync(templatePath, 'utf-8');
     let htmlContent2 = ejs.render(template, {
@@ -51,6 +60,20 @@ export async function build() {
     fs.writeFileSync(htmlPath, htmlContent2);
     console.log(`Built dist/${html}`);
   }
+
+  const docsIndexContent = [
+    '# Mako',
+    '',
+    '## Docs',
+    '',
+    ...docsIndex.map(({ title, url }) => `- [${title}](${url})`),
+    '',
+    '## Optional',
+    '',
+  ].join('\n');
+
+  fs.writeFileSync(path.join(cwd, 'dist/llms.txt'), docsIndexContent);
+  console.log('Generated llms.txt');
 
   // Copy index.html
   fs.copyFileSync(path.join(cwd, 'index.html'), path.join(cwd, 'dist/index.html'));
